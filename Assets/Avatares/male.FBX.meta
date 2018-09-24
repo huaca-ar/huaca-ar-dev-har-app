@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: a7bd7e52a2e1ae54a8a6ff80ea23acd0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ArnoldLight001
+    100002: ArnoldLight001.Target
+    100004: ArnoldLight002
+    100006: ArnoldLight002.Target
+    100008: ArnoldLight003
+    100010: ArnoldLight003.Target
+    100012: boca
+    100014: Box001
+    100016: Box003
+    100018: Box005
+    100020: Box006
+    100022: CALAVERA 002
+    100024: CALAVERA 003
+    100026: CALAVERA 004
+    100028: CALAVERA 005
+    100030: CALAVERA 006
+    100032: CALAVERA 007
+    100034: CALAVERA 008
+    100036: CALAVERA 1
+    100038: Camera001
+    100040: Camera001.Target
+    100042: casco
+    100044: CETRO
+    100046: Circle001
+    100048: Cone001
+    100050: faldita
+    100052: Hades Personaje
+    100054: Line001
+    100056: //RootNode
+    100058: mandibula
+    100060: "ni\xF1o"
+    100062: "ni\xF1o Footsteps"
+    100064: "ni\xF1o Head"
+    100066: "ni\xF1o HeadNub"
+    100068: "ni\xF1o L Calf"
+    100070: "ni\xF1o L Clavicle"
+    100072: "ni\xF1o L Finger0"
+    100074: "ni\xF1o L Finger01"
+    100076: "ni\xF1o L Finger02"
+    100078: "ni\xF1o L Finger0Nub"
+    100080: "ni\xF1o L Finger1"
+    100082: "ni\xF1o L Finger11"
+    100084: "ni\xF1o L Finger12"
+    100086: "ni\xF1o L Finger1Nub"
+    100088: "ni\xF1o L Finger2"
+    100090: "ni\xF1o L Finger21"
+    100092: "ni\xF1o L Finger22"
+    100094: "ni\xF1o L Finger2Nub"
+    100096: "ni\xF1o L Finger3"
+    100098: "ni\xF1o L Finger31"
+    100100: "ni\xF1o L Finger32"
+    100102: "ni\xF1o L Finger3Nub"
+    100104: "ni\xF1o L Finger4"
+    100106: "ni\xF1o L Finger41"
+    100108: "ni\xF1o L Finger42"
+    100110: "ni\xF1o L Finger4Nub"
+    100112: "ni\xF1o L Foot"
+    100114: "ni\xF1o L Forearm"
+    100116: "ni\xF1o L Hand"
+    100118: "ni\xF1o L Thigh"
+    100120: "ni\xF1o L Toe0"
+    100122: "ni\xF1o L Toe0Nub"
+    100124: "ni\xF1o L UpperArm"
+    100126: "ni\xF1o Neck"
+    100128: "ni\xF1o Pelvis"
+    100130: "ni\xF1o R Calf"
+    100132: "ni\xF1o R Clavicle"
+    100134: "ni\xF1o R Finger0"
+    100136: "ni\xF1o R Finger01"
+    100138: "ni\xF1o R Finger02"
+    100140: "ni\xF1o R Finger0Nub"
+    100142: "ni\xF1o R Finger1"
+    100144: "ni\xF1o R Finger11"
+    100146: "ni\xF1o R Finger12"
+    100148: "ni\xF1o R Finger1Nub"
+    100150: "ni\xF1o R Finger2"
+    100152: "ni\xF1o R Finger21"
+    100154: "ni\xF1o R Finger22"
+    100156: "ni\xF1o R Finger2Nub"
+    100158: "ni\xF1o R Finger3"
+    100160: "ni\xF1o R Finger31"
+    100162: "ni\xF1o R Finger32"
+    100164: "ni\xF1o R Finger3Nub"
+    100166: "ni\xF1o R Finger4"
+    100168: "ni\xF1o R Finger41"
+    100170: "ni\xF1o R Finger42"
+    100172: "ni\xF1o R Finger4Nub"
+    100174: "ni\xF1o R Foot"
+    100176: "ni\xF1o R Forearm"
+    100178: "ni\xF1o R Hand"
+    100180: "ni\xF1o R Thigh"
+    100182: "ni\xF1o R Toe0"
+    100184: "ni\xF1o R Toe0Nub"
+    100186: "ni\xF1o R UpperArm"
+    100188: "ni\xF1o Spine"
+    100190: "ni\xF1o Spine1"
+    100192: ojo 003
+    100194: ojo 1
+    100196: oreja derecha
+    100198: oreja izquierda
+    100200: pantalon
+    100202: Plane002
+    100204: Plane003
+    100206: Plane005
+    100208: Plane006
+    100210: Plane007
+    100212: Plane008
+    100214: polo
+    100216: polo001
+    100218: Sphere004
+    100220: Sphere005
+    400000: ArnoldLight001
+    400002: ArnoldLight001.Target
+    400004: ArnoldLight002
+    400006: ArnoldLight002.Target
+    400008: ArnoldLight003
+    400010: ArnoldLight003.Target
+    400012: boca
+    400014: Box001
+    400016: Box003
+    400018: Box005
+    400020: Box006
+    400022: CALAVERA 002
+    400024: CALAVERA 003
+    400026: CALAVERA 004
+    400028: CALAVERA 005
+    400030: CALAVERA 006
+    400032: CALAVERA 007
+    400034: CALAVERA 008
+    400036: CALAVERA 1
+    400038: Camera001
+    400040: Camera001.Target
+    400042: casco
+    400044: CETRO
+    400046: Circle001
+    400048: Cone001
+    400050: faldita
+    400052: Hades Personaje
+    400054: Line001
+    400056: //RootNode
+    400058: mandibula
+    400060: "ni\xF1o"
+    400062: "ni\xF1o Footsteps"
+    400064: "ni\xF1o Head"
+    400066: "ni\xF1o HeadNub"
+    400068: "ni\xF1o L Calf"
+    400070: "ni\xF1o L Clavicle"
+    400072: "ni\xF1o L Finger0"
+    400074: "ni\xF1o L Finger01"
+    400076: "ni\xF1o L Finger02"
+    400078: "ni\xF1o L Finger0Nub"
+    400080: "ni\xF1o L Finger1"
+    400082: "ni\xF1o L Finger11"
+    400084: "ni\xF1o L Finger12"
+    400086: "ni\xF1o L Finger1Nub"
+    400088: "ni\xF1o L Finger2"
+    400090: "ni\xF1o L Finger21"
+    400092: "ni\xF1o L Finger22"
+    400094: "ni\xF1o L Finger2Nub"
+    400096: "ni\xF1o L Finger3"
+    400098: "ni\xF1o L Finger31"
+    400100: "ni\xF1o L Finger32"
+    400102: "ni\xF1o L Finger3Nub"
+    400104: "ni\xF1o L Finger4"
+    400106: "ni\xF1o L Finger41"
+    400108: "ni\xF1o L Finger42"
+    400110: "ni\xF1o L Finger4Nub"
+    400112: "ni\xF1o L Foot"
+    400114: "ni\xF1o L Forearm"
+    400116: "ni\xF1o L Hand"
+    400118: "ni\xF1o L Thigh"
+    400120: "ni\xF1o L Toe0"
+    400122: "ni\xF1o L Toe0Nub"
+    400124: "ni\xF1o L UpperArm"
+    400126: "ni\xF1o Neck"
+    400128: "ni\xF1o Pelvis"
+    400130: "ni\xF1o R Calf"
+    400132: "ni\xF1o R Clavicle"
+    400134: "ni\xF1o R Finger0"
+    400136: "ni\xF1o R Finger01"
+    400138: "ni\xF1o R Finger02"
+    400140: "ni\xF1o R Finger0Nub"
+    400142: "ni\xF1o R Finger1"
+    400144: "ni\xF1o R Finger11"
+    400146: "ni\xF1o R Finger12"
+    400148: "ni\xF1o R Finger1Nub"
+    400150: "ni\xF1o R Finger2"
+    400152: "ni\xF1o R Finger21"
+    400154: "ni\xF1o R Finger22"
+    400156: "ni\xF1o R Finger2Nub"
+    400158: "ni\xF1o R Finger3"
+    400160: "ni\xF1o R Finger31"
+    400162: "ni\xF1o R Finger32"
+    400164: "ni\xF1o R Finger3Nub"
+    400166: "ni\xF1o R Finger4"
+    400168: "ni\xF1o R Finger41"
+    400170: "ni\xF1o R Finger42"
+    400172: "ni\xF1o R Finger4Nub"
+    400174: "ni\xF1o R Foot"
+    400176: "ni\xF1o R Forearm"
+    400178: "ni\xF1o R Hand"
+    400180: "ni\xF1o R Thigh"
+    400182: "ni\xF1o R Toe0"
+    400184: "ni\xF1o R Toe0Nub"
+    400186: "ni\xF1o R UpperArm"
+    400188: "ni\xF1o Spine"
+    400190: "ni\xF1o Spine1"
+    400192: ojo 003
+    400194: ojo 1
+    400196: oreja derecha
+    400198: oreja izquierda
+    400200: pantalon
+    400202: Plane002
+    400204: Plane003
+    400206: Plane005
+    400208: Plane006
+    400210: Plane007
+    400212: Plane008
+    400214: polo
+    400216: polo001
+    400218: Sphere004
+    400220: Sphere005
+    2000000: Camera001
+    2100000: 'Material #26'
+    2100002: 'Material #46'
+    2100004: 'Material #48'
+    2100006: 'Material #47'
+    2100008: 'Material #51'
+    2100010: 'Material #55'
+    2100012: 'Material #52'
+    2100014: 'Material #56'
+    2100016: 'Material #45'
+    2100018: 'Material #53'
+    2100020: 'Material #57'
+    2100022: No Name
+    2100024: 'Material #28'
+    2100026: 'Material #71'
+    2100028: 'Material #72'
+    2300000: boca
+    2300002: Box005
+    2300004: Box006
+    2300006: CALAVERA 002
+    2300008: CALAVERA 003
+    2300010: CALAVERA 004
+    2300012: CALAVERA 005
+    2300014: CALAVERA 006
+    2300016: CALAVERA 007
+    2300018: CALAVERA 008
+    2300020: CALAVERA 1
+    2300022: casco
+    2300024: CETRO
+    2300026: Cone001
+    2300028: faldita
+    2300030: Hades Personaje
+    2300032: ojo 003
+    2300034: ojo 1
+    2300036: oreja derecha
+    2300038: oreja izquierda
+    2300040: pantalon
+    2300042: Plane002
+    2300044: Plane003
+    2300046: Plane005
+    2300048: Plane006
+    2300050: Plane007
+    2300052: Plane008
+    2300054: polo
+    2300056: polo001
+    2300058: Sphere004
+    2300060: Sphere005
+    3300000: boca
+    3300002: Box005
+    3300004: Box006
+    3300006: CALAVERA 002
+    3300008: CALAVERA 003
+    3300010: CALAVERA 004
+    3300012: CALAVERA 005
+    3300014: CALAVERA 006
+    3300016: CALAVERA 007
+    3300018: CALAVERA 008
+    3300020: CALAVERA 1
+    3300022: casco
+    3300024: CETRO
+    3300026: Cone001
+    3300028: faldita
+    3300030: Hades Personaje
+    3300032: ojo 003
+    3300034: ojo 1
+    3300036: oreja derecha
+    3300038: oreja izquierda
+    3300040: pantalon
+    3300042: Plane002
+    3300044: Plane003
+    3300046: Plane005
+    3300048: Plane006
+    3300050: Plane007
+    3300052: Plane008
+    3300054: polo
+    3300056: polo001
+    3300058: Sphere004
+    3300060: Sphere005
+    4300000: Plane002
+    4300002: Hades Personaje
+    4300004: ojo 1
+    4300006: casco
+    4300008: faldita
+    4300010: Cone001
+    4300012: polo
+    4300014: CETRO
+    4300016: Plane003
+    4300018: Plane005
+    4300020: CALAVERA 1
+    4300022: ojo 003
+    4300024: CALAVERA 002
+    4300026: CALAVERA 003
+    4300028: CALAVERA 004
+    4300030: CALAVERA 005
+    4300032: CALAVERA 006
+    4300034: CALAVERA 007
+    4300036: CALAVERA 008
+    4300038: Plane006
+    4300040: Plane007
+    4300042: Sphere004
+    4300044: Sphere005
+    4300046: Box005
+    4300048: boca
+    4300050: oreja derecha
+    4300052: oreja izquierda
+    4300054: Plane008
+    4300056: Box006
+    4300058: polo001
+    4300060: pantalon
+    7400000: Take 001
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+    6000828045688606266: Camera001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
