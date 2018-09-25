@@ -32,7 +32,7 @@ namespace Mapbox.Examples
 			var distance = Vector3.Distance(transform.position, Target.position);
 			if (distance > 0.1f)
 			{
-				transform.LookAt(Target.position);
+				transform.LookAt(Target.position); // girar el player hacia el punto objetivo (target)
 				transform.Translate(Vector3.forward * Speed);
 				CharacterAnimator.SetBool("IsWalking", true);
 			}

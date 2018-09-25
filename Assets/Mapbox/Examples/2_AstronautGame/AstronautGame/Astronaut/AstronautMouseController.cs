@@ -44,6 +44,7 @@ namespace Mapbox.Examples
 			characterAnimator = GetComponentInChildren<Animator>();
 			if (!Application.isEditor)
 			{
+				// no se usara el controller si se esta usando fuera de unity
 				this.enabled = false;
 				return;
 			}
@@ -51,11 +52,13 @@ namespace Mapbox.Examples
 
 		void Update()
 		{
+			
 			if (characterDisabled)
 				return;
 
 			CamControl();
 
+			//validar click
 			bool click = false;
 
 			if (Input.GetMouseButtonDown(0))
@@ -69,10 +72,17 @@ namespace Mapbox.Examples
 					click = true;
 				}
 			}
+			//fin validar click 
+
+
 
 			if (click)
 			{
+
+				//transform.position en vez de Input.mousePosition
 				ray = cam.ScreenPointToRay(Input.mousePosition);
+				// si el ray choca con un colider devuelve true
+				// en hit se guardara el punto de choque
 
 				if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
 				{
@@ -217,6 +227,10 @@ namespace Mapbox.Examples
 		{
 			_movementEndPoint.position = new Vector3(pos.x, 0.2f, pos.z);
 			_movementEndPoint.gameObject.SetActive(active);
+			// this.gameObject.SetActive(active); 
+			// no se pudo poner esto?
+			// respuesta: parece que es lo mismo (hace referencia al player)
+			// Objetivo: Activar al player
 		}
 		#endregion
 	}
