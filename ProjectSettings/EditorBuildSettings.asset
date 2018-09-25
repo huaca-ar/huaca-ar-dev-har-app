@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Mapbox/Examples/0_PrefabScenes/Location-basedGame.unity
     guid: 42f6aa7ce7a604f16ade319663f46ceb
+  - enabled: 0
+    path: Assets/Scenes/MapScene.unity
+    guid: 24ecf7ef226e4f3409514fe3c53deb5f
+  - enabled: 0
+    path: Assets/Mapbox/Examples/2_AstronautGame/AstronautGame.unity
+    guid: 23b3522d4f6fa450eb781397db4b26ed
+  - enabled: 1
+    path: Assets/Scenes/BestMapScene.unity
+    guid: fb3b4f720105ec44185cfff62a213af8
   m_configObjects: {}
