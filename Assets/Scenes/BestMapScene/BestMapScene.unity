@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45006508, g: 0.50011593, b: 0.5754828, a: 1}
+  m_IndirectSpecularColor: {r: 0.44352973, g: 0.4928308, b: 0.5724287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -212,15 +212,15 @@ MonoBehaviour:
         east: 1
         south: 1
       rangeAroundTransformOptions:
-        targetTransform: {fileID: 0}
+        targetTransform: {fileID: 1538829360}
         visibleBuffer: 0
         disposeBuffer: 0
     placementOptions:
       placementType: 1
       snapMapToZero: 0
     scalingOptions:
-      scalingType: 1
-      unityTileSize: 100
+      scalingType: 0
+      unityTileSize: 200
     loadingTexture: {fileID: 2800000, guid: e2896a92727704803a9c422b043eae89, type: 3}
     tileMaterial: {fileID: 2100000, guid: b9f23e9bce724fa4daac57ecded470b8, type: 2}
   _imagery:
@@ -253,7 +253,7 @@ MonoBehaviour:
         exaggerationFactor: 1
       modificationOptions:
         sampleCount: 10
-        useRelativeHeight: 1
+        useRelativeHeight: 0
         earthRadius: 1000
       unityLayerOptions:
         addToLayer: 0
@@ -272,11 +272,8 @@ MonoBehaviour:
         - airport_label
         - barrier_line
         - building
-        - contour
         - country_label
-        - hillshade
         - housenum_label
-        - landcover
         - landuse
         - landuse_overlay
         - marine_label
@@ -288,7 +285,6 @@ MonoBehaviour:
         - road
         - road_label
         - state_label
-        - traffic
         - water
         - water_label
         - waterway
@@ -298,7 +294,7 @@ MonoBehaviour:
         isActive: 0
         layerSource:
           Name: Mapbox Terrain
-          Id: mapbox.3d-buildings,mapbox.mapbox-streets-v7,mapbox.mapbox-traffic-v1,mapbox.mapbox-terrain-v2
+          Id: mapbox.mapbox-streets-v7
           Modified: 
           UserName: 
       useOptimizedStyle: 0
@@ -600,6 +596,7 @@ GameObject:
   - component: {fileID: 234181019}
   - component: {fileID: 234181018}
   - component: {fileID: 234181017}
+  - component: {fileID: 234181016}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -613,14 +610,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 234181014}
-  m_LocalRotation: {x: 0.30470043, y: 0.10373317, z: -0.03340496, w: 0.94619304}
-  m_LocalPosition: {x: -92.78, y: 327.76, z: -418.58}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalPosition: {x: -2, y: 300, z: -180}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 764432100}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 35.7, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!114 &234181016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 234181014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f2812c3d4f7942b32245763a60bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  smoothFactor: 0.5
+  rotateAroundPlayer: 1
+  rotationsSpeed: 5
 --- !u!81 &234181017
 AudioListener:
   m_ObjectHideFlags: 0
@@ -657,7 +669,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 3333
-  field of view: 5
+  field of view: 37.856136
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -838,13 +850,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 764432099}
-  m_LocalRotation: {x: -0.25388518, y: -0.07250805, z: 0.9643239, w: -0.019089768}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.38667953, y: 0.43410933, z: -0.54534364, w: 0.6038447}
+  m_LocalPosition: {x: 0, y: 5.78, z: 8.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 234181015}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 171.4, y: -209.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 70.13, y: 17.556, z: -71.8}
 --- !u!108 &764432101
 Light:
   m_ObjectHideFlags: 0
@@ -1287,6 +1299,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114672260392319182, guid: b4281c0219e45624e855839527bdc6f1,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1538829360}
+    - target: {fileID: 114672260392319182, guid: b4281c0219e45624e855839527bdc6f1,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 234181019}
     - target: {fileID: 114244045502737044, guid: b4281c0219e45624e855839527bdc6f1,
         type: 2}
       propertyPath: map
@@ -1303,16 +1325,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1538829360}
     - target: {fileID: 114244045502737044, guid: b4281c0219e45624e855839527bdc6f1,
-        type: 2}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 234181019}
-    - target: {fileID: 114672260392319182, guid: b4281c0219e45624e855839527bdc6f1,
-        type: 2}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 1538829360}
-    - target: {fileID: 114672260392319182, guid: b4281c0219e45624e855839527bdc6f1,
         type: 2}
       propertyPath: cam
       value: 
