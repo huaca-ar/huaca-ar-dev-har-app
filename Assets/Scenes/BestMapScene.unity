@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45006508, g: 0.50011593, b: 0.5754828, a: 1}
+  m_IndirectSpecularColor: {r: 0.4500646, g: 0.5001158, b: 0.5754822, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 159634027}
   - component: {fileID: 159634025}
   - component: {fileID: 159634026}
+  - component: {fileID: 159634028}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -589,6 +590,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159634028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159634024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf32ea2cc0514b569329f6b6b68f9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _map: {fileID: 159634025}
+  _locationStrings:
+  - -12.072926, -77.082135
+  - -12.072784, -77.082702
+  - -12.073218, -77.082264
+  - -12.072437, -77.081843
+  _spawnScale: 10
+  _markerPrefab: {fileID: 100000, guid: 76087a3bd0f174964bbe71a0a9c5386d, type: 3}
 --- !u!1 &234181014
 GameObject:
   m_ObjectHideFlags: 0
