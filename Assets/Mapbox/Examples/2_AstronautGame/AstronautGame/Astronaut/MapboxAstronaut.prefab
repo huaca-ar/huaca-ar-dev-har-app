@@ -886,7 +886,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0f9e3de68a3085e469bd62c8b40e9487, type: 2}
   Target: {fileID: 0}
   CharacterAnimator: {fileID: 95022966287224496}
-  Speed: 0.005
+  Speed: 0.01
   cam: {fileID: 0}
 --- !u!114 &114985971930638828
 MonoBehaviour:
