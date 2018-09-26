@@ -720,7 +720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _accuracy: 5
   _autoFireEvent: 1
-  _updateInterval: 1
+  _updateInterval: 0.1
   _sendEvent: 0
   _targetTransform: {fileID: 289230305}
 --- !u!1 &397025668
