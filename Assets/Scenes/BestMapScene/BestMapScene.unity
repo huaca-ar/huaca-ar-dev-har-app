@@ -607,7 +607,8 @@ MonoBehaviour:
   - -12.072784, -77.082702
   - -12.073218, -77.082264
   - -12.072437, -77.081843
-  _spawnScale: 10
+  - 37.785202, -122.40264
+  _spawnScale: 0.05
   _markerPrefab: {fileID: 100000, guid: 76087a3bd0f174964bbe71a0a9c5386d, type: 3}
 --- !u!1 &234181014
 GameObject:
