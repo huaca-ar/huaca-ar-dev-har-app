@@ -18,7 +18,9 @@ public class Rotation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        cameraOffset = transform.position - playerTransform.position;	
+        cameraOffset = transform.position - playerTransform.position;
+        
+
 	}
 	
 	// LateUpdate is called after Update methods
