@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour {
+public class MapSceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	
@@ -15,5 +16,7 @@ public class UIManager : MonoBehaviour {
 
 	public void openProfile(){
 		//do something
+
+		SceneManager.LoadScene(GameConstants.PROFILE_SCENE,LoadSceneMode.Single);
 	}
 }

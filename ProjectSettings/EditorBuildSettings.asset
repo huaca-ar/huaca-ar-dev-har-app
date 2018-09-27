@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BestMapScene/BestMapScene.unity
     guid: fb3b4f720105ec44185cfff62a213af8
+  - enabled: 1
+    path: Assets/Scenes/Profile/Profile.unity
+    guid: 98bcbc17cedd888408ed4b98e8515ba2
   m_configObjects: {}
