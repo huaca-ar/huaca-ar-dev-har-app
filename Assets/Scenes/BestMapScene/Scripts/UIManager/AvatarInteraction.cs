@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Mapbox.Examples;
 
 public class AvatarInteraction : MonoBehaviour {
 
+	public GameObject map;
+	private SpawnOnMap spawnOnMap;
 	public int touchCount;
 	public Text coordinates;
 	public double myLatitude;
 	public double myLongitude;
-	// Use this for initialization
+	
+	void Awake() {
+		spawnOnMap = map.GetComponent<SpawnOnMap>();
+	}
+
 	void Start () {
 		touchCount = 0;
 	}
@@ -21,37 +28,46 @@ public class AvatarInteraction : MonoBehaviour {
 	}
 
 	private void OnMouseDown() {
-		this.prepareGPSLocation();
-		coordinates.text = "Lat: " + this.myLatitude + ", Long: " + this.myLongitude + ", Touch: " + touchCount;
-		touchCount++;
-		Debug.Log("Se inicia escaneo de area .........");
-		double[,] points = new double[5, 2];
-		// mi posicion actual
-		//double miLat = -12.072164;
-		//double miLong = -77.080380;
-		// colocar aqui los puntos
-		// si
-		points[0,0] = -12.072155;
-		points[0,1] = -77.080083;
-		// si
-		points[1,0] = -12.072126;
-		points[1,1] = -77.080616;
-		// no creo
-		points[2,0] = -12.071630;
-		points[2,1] = -77.080156;
-		// no creo
-		points[3,0] = -12.071454;
-		points[3,1] = -77.079743;
-		// no creo
-		points[4,0] = -12.072555;
-		points[4,1] = -77.079443;
-		// ahora se verifica si se encuentran en el radio de 100m
-		double distance;
-		for (int i=0;i<5;i++) {
-			distance = getDistance(this.myLatitude, this.myLongitude, points[i,0], points[i,1]);
-			if (distance <= 100)
-				Debug.Log("El punto " + points[i,0] + ", " + points[i,1] + " se encuentra disponible para excavar");
+		if (spawnOnMap.enabled == false) {
+			Debug.Log("Se inicia escaneo de area .........");
+			this.prepareGPSLocation();
+			/*
+			this.myLatitude = 37.784179;
+			this.myLongitude = -122.401583;
+			*/
+			touchCount++;
+			coordinates.text = "Lat: " + this.myLatitude + ", Long: " + this.myLongitude + ", Touch: " + touchCount;
+			List<string> locationsToSpawn = new List<string>();
+			double[,] points = new double[5, 2];
+			// si
+			points[0,0] = -12.072320;
+			points[0,1] = -77.080251;
+			// si
+			points[1,0] = -12.072298;
+			points[1,1] = -77.080171;
+			// si
+			points[2,0] = -12.072278;
+			points[2,1] = -77.080346;
+			// si
+			points[3,0] = -12.072184;
+			points[3,1] = -77.080266;
+			// no creo
+			points[4,0] = -12.072129;
+			points[4,1] = -77.080641;
+			// ahora se verifica si se encuentran en el radio de 100m
+			double distance;
+			for (int i=0;i<5;i++) {
+				distance = getDistance(this.myLatitude, this.myLongitude, points[i,0], points[i,1]);
+				Debug.Log("Distancia " + (i+1) + ": " + distance);
+				if (distance <= 100) {
+					Debug.Log("El punto " + points[i,0] + ", " + points[i,1] + " se encuentra disponible para excavar");
+					locationsToSpawn.Add(points[i,0].ToString() + ", " + points[i,1].ToString());
+				}
+			}
+			// una vez que se de un tap sobre el avatar entonces mostrara los profabs sobre el mapa
+			spawnOnMap.setLocationPoints(locationsToSpawn.ToArray());
 		}
+		spawnOnMap.enabled = !spawnOnMap.enabled;
 	}
 
 	public void prepareGPSLocation() {
