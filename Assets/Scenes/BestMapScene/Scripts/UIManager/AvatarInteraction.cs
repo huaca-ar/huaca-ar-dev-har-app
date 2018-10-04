@@ -31,14 +31,12 @@ public class AvatarInteraction : MonoBehaviour {
 		if (spawnOnMap.enabled == false) {
 			Debug.Log("Se inicia escaneo de area .........");
 			this.prepareGPSLocation();
-			/*
-			this.myLatitude = 37.784179;
-			this.myLongitude = -122.401583;
-			*/
+			/* this.myLatitude = 37.784179;
+			this.myLongitude = -122.401583; */
 			touchCount++;
 			coordinates.text = "Lat: " + this.myLatitude + ", Long: " + this.myLongitude + ", Touch: " + touchCount;
 			List<string> locationsToSpawn = new List<string>();
-			double[,] points = new double[5, 2];
+			/* double[,] points = new double[5, 2];
 			// si
 			points[0,0] = -12.072320;
 			points[0,1] = -77.080251;
@@ -53,17 +51,18 @@ public class AvatarInteraction : MonoBehaviour {
 			points[3,1] = -77.080266;
 			// no creo
 			points[4,0] = -12.072129;
-			points[4,1] = -77.080641;
+			points[4,1] = -77.080641; */
 			// ahora se verifica si se encuentran en el radio de 100m
 			double distance;
-			for (int i=0;i<5;i++) {
-				distance = getDistance(this.myLatitude, this.myLongitude, points[i,0], points[i,1]);
+			for (int i=0;i<ExcavationAreas.EXCAVATION_ZONES.GetLength(0);i++) {
+				distance = getDistance(this.myLatitude, this.myLongitude, ExcavationAreas.EXCAVATION_ZONES[i,0], ExcavationAreas.EXCAVATION_ZONES[i,1]);
 				Debug.Log("Distancia " + (i+1) + ": " + distance);
 				if (distance <= 100) {
-					Debug.Log("El punto " + points[i,0] + ", " + points[i,1] + " se encuentra disponible para excavar");
-					locationsToSpawn.Add(points[i,0].ToString() + ", " + points[i,1].ToString());
+					Debug.Log("El punto " + ExcavationAreas.EXCAVATION_ZONES[i,0] + ", " + ExcavationAreas.EXCAVATION_ZONES[i,1] + " se encuentra disponible para excavar");
+					locationsToSpawn.Add(ExcavationAreas.EXCAVATION_ZONES[i,0].ToString() + ", " + ExcavationAreas.EXCAVATION_ZONES[i,1].ToString());
 				}
 			}
+			Debug.Log("Cantidad de puntos seleccionados: "+ locationsToSpawn.Count);
 			// una vez que se de un tap sobre el avatar entonces mostrara los profabs sobre el mapa
 			spawnOnMap.setLocationPoints(locationsToSpawn.ToArray());
 		}
