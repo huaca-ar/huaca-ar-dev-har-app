@@ -207,6 +207,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4019248489508904}
   - component: {fileID: 95443713901224048}
+  - component: {fileID: 65552259535718054}
+  - component: {fileID: 114077050054937094}
   m_Layer: 0
   m_Name: ExcavationAreaPrefab
   m_TagString: Untagged
@@ -989,6 +991,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725917169428680}
   m_Mesh: {fileID: 4300004, guid: b450d08db4070b149a70cc141d79cd5c, type: 3}
+--- !u!65 &65552259535718054
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1854216391480674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3.1757545, z: 2.7532368}
+  m_Center: {x: 0, y: 0.9495764, z: -0.1821788}
 --- !u!95 &95443713901224048
 Animator:
   serializedVersion: 3
@@ -1007,3 +1021,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114077050054937094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1854216391480674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2106bdbe64aaf459846aaf0301b5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  area: {fileID: 1854216391480674}
