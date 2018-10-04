@@ -8,5 +8,7 @@ public static class GameConstants {
 	public static string MAP_SCENE= "BestMapScene";
 	public static string PROFILE_SCENE= "Profile";
 
+	public static string EXCAVATION_SCENE= "ExcavationArea";
+
 
 }
