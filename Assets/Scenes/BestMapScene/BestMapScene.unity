@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44352937, g: 0.49283051, b: 0.5724283, a: 1}
+  m_IndirectSpecularColor: {r: 0.44352973, g: 0.4928308, b: 0.5724287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1081,7 +1081,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7428601, y: 0.7428601, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 551691890}
   m_Father: {fileID: 2053637638}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1589,7 +1590,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7428601, y: 0.7428601, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 543968376}
   m_Father: {fileID: 2053637638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2069,7 +2071,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f1972951ac6fc345881da2aa3dc3442, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f1972951ac6fc345881da2aa3dc3442, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2077,7 +2079,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f1972951ac6fc345881da2aa3dc3442, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f1972951ac6fc345881da2aa3dc3442, type: 3}
       propertyPath: m_RootOrder
@@ -2106,6 +2108,10 @@ Prefab:
     - target: {fileID: 400016, guid: 7f1972951ac6fc345881da2aa3dc3442, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.21514645
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f1972951ac6fc345881da2aa3dc3442, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1972951ac6fc345881da2aa3dc3442, type: 3}
@@ -2387,8 +2393,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.016968125, y: 0.012909643, z: 0.010394994}
-  m_Center: {x: -0.00022518996, y: 0.0068747895, z: -0.00044061488}
+  m_Size: {x: 0.0051606954, y: 0.010571694, z: 0.010394994}
+  m_Center: {x: 0.0002801164, y: 0.005705815, z: -0.00044061488}
 --- !u!95 &1866646283 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 7f1972951ac6fc345881da2aa3dc3442,
