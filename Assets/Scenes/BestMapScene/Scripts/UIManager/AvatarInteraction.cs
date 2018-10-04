@@ -14,6 +14,7 @@ public class AvatarInteraction : MonoBehaviour {
 	public double myLatitude;
 	public double myLongitude;
 	
+	
 	void Awake() {
 		spawnOnMap = map.GetComponent<SpawnOnMap>();
 	}
@@ -29,6 +30,13 @@ public class AvatarInteraction : MonoBehaviour {
 
 	private void OnMouseDown() {
 		if (spawnOnMap.enabled == false) {
+			
+
+			Animator animator = gameObject.GetComponent<Animator>();
+
+			animator.SetBool("isScanning",true);
+
+
 			Debug.Log("Se inicia escaneo de area .........");
 			this.prepareGPSLocation();
 			/* this.myLatitude = 37.784179;

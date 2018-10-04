@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 65552259535718054}
   - component: {fileID: 114077050054937094}
   m_Layer: 0
-  m_Name: ExcavationAreaPrefab
+  m_Name: NotificationAreaPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
