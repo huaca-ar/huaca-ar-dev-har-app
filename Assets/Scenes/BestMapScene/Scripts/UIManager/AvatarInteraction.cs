@@ -8,6 +8,7 @@ using Mapbox.Examples;
 public class AvatarInteraction : MonoBehaviour {
 
 	public GameObject map;
+	public GameObject particleSystem;
 	private SpawnOnMap spawnOnMap;
 	public int touchCount;
 	public Text coordinates;
@@ -29,6 +30,7 @@ public class AvatarInteraction : MonoBehaviour {
 	}
 
 	private void OnMouseDown() {
+		particleSystem.SetActive(true);
 		if (spawnOnMap.enabled == false) {
 			
 
