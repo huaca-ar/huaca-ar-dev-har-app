@@ -12,8 +12,9 @@ public class DBManager : MonoBehaviour {
 
 	private bool usable;
 
-	public InputField email, password;
+	[SerializeField] private InputField nickLogin, passLogin;
 	// Use this for initialization
+	[SerializeField] private InputField nickReg, passReg;
 	
 	void Start(){
 		Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
@@ -39,11 +40,11 @@ public class DBManager : MonoBehaviour {
 	public void LoginButtonPressed(){
 
 		if(usable){
-			string fakeEmail = email.text + SUFIX;
+			string fakeEmail = nickLogin.text + SUFIX;
 			
 			Debug.Log(fakeEmail);
 
-			FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(fakeEmail,password.text).
+			FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(fakeEmail,passLogin.text).
 			ContinueWith((response)=>{
 				
 				if(response.IsCanceled){
@@ -58,6 +59,7 @@ public class DBManager : MonoBehaviour {
 				Debug.LogFormat("Usuario logueado: {0}  {1}", user.Email, user.UserId);
 				SSTools.ShowMessage("Bienvenido",SSTools.Position.bottom,SSTools.Time.twoSecond);
 
+				//esta actividad no deberia hacerse aca pero bue
 				GameSceneManager manager =  new GameSceneManager();
 				manager.LoadMapScene();
 			});
@@ -76,38 +78,40 @@ public class DBManager : MonoBehaviour {
 		
 	}
 
-	public bool RegisterUser(){
+	public void RegisterUser(){
 
 
 		if(usable){
 			
-			string fakeEmail = email.text + SUFIX;
+			string fakeEmail = nickReg.text + SUFIX;
 			Debug.Log(fakeEmail);
 
-			FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(fakeEmail,password.text).ContinueWith((response)=>{
+			FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(fakeEmail,passReg.text).ContinueWith((response)=>{
 
 				if(response.IsFaulted){
-					return false;
+					SSTools.ShowMessage("El nick ya existe",SSTools.Position.top,SSTools.Time.twoSecond);
 				}
 
 				if(response.IsCanceled){
-					return false;
+					SSTools.ShowMessage("Ocurrio un problema",SSTools.Position.bottom,SSTools.Time.twoSecond);
 				}
 				
 				FirebaseUser newUser = response.Result;
 
-
-
 				string[] cadenas = newUser.Email.Split('@');
 
 				Debug.LogFormat("USERID: {0} NICK: {1}", newUser.UserId, cadenas[0]);
+				SSTools.ShowMessage("Bienvenido",SSTools.Position.bottom,SSTools.Time.oneSecond);
 
-				return true;
+				//esta actividad no deberia hacerse aca pero bue
+				GameSceneManager manager =  new GameSceneManager();
+				manager.LoadMapScene();
+
 			});
 		}
 		
 		
-		return false;
+		
 
 	}
 }
