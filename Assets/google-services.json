@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "26427586489",
+    "firebase_url": "https://arqueopucp.firebaseio.com",
+    "project_id": "arqueopucp",
+    "storage_bucket": "arqueopucp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26427586489:android:2c15b7cc572e6b56",
+        "android_client_info": {
+          "package_name": "com.pucp.arpucp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26427586489-2193o8mt1v8r53bcorl0chbckfhc8d02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pucp.arpucp",
+            "certificate_hash": "cecd213b740ee065b32653a3b43ef20363ab0713"
+          }
+        },
+        {
+          "client_id": "26427586489-101r1lpkc1cm9g1efld5hcetaimg3uds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj55xFzBmnSD5RWuUkLD6qoOavy2BAuQ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26427586489-101r1lpkc1cm9g1efld5hcetaimg3uds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
