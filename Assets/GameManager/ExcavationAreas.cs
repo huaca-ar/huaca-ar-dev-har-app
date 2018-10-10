@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ExcavationAreas {
 
-	public static double[,] EXCAVATION_ZONES = new double[46,2] {{-12.072835, -77.082586},
+	public static double[,] EXCAVATION_ZONES = new double[51,2] {{-12.072835, -77.082586},
 															{-12.072788, -77.082052},
 															{-12.072489, -77.081864},
 															{-12.072576, -77.081521},
@@ -49,6 +49,13 @@ public static class ExcavationAreas {
 															{-12.072568, -77.081899},	// Pabellon V 3
 															{-12.072913, -77.080658},	// Camino Inca
 															{-12.072320, -77.080251},
-															{37.784505, -122.402597}};
+															{37.784505, -122.402597},
+															{-12.075070, -76.996292},
+															{-12.074864, -76.996410},
+															{-12.074999, -76.996420},
+															{-12.015783, -76.987355},
+															{-12.015394, -76.986799}};
+
+	public static int REQUIRED_QUANTITY = 5;
 
 }
