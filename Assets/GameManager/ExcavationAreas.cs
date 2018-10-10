@@ -56,4 +56,6 @@ public static class ExcavationAreas {
 															{-12.015783, -76.987355},
 															{-12.015394, -76.986799}};
 
+	public static int REQUIRED_QUANTITY = 5;
+
 }

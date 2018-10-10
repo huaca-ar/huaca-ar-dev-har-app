@@ -19,8 +19,8 @@ public class ExcavationAreaInteraction : MonoBehaviour {
 	}
 
 	private void OnMouseDown() {
-		staminaBarSlider.value += 0.2f;
-		Debug.Log("Zona de excavacion tocada");
+		staminaBarSlider.value += 1.0f/ExcavationAreas.REQUIRED_QUANTITY;
+		Debug.Log("Zona de excavacion tocada, nivel de stamina : " + staminaBarSlider.value);
 		Animator animator = gameObject.GetComponent<Animator>();
 		animator.SetBool("dig", true);
 	}
