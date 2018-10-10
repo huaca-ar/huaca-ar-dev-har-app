@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	// Use this for initialization
-	private string uuid;
+	// private string uuid;
 	private DateTime createdAt;
 	private bool active;
 	private GameInfo gameProgress;
@@ -14,14 +14,84 @@ public class Player : MonoBehaviour {
 	private string origin; // diferenciar google de local
 	const int MAX_EXP = 100;
 
-	public void addExp(int exp_gained){
+
+
+    public Player (){
+
+    }
+    public DateTime CreatedAt
+    {
+        get
+        {
+            return createdAt;
+        }
+
+        set
+        {
+            createdAt = value;
+        }
+    }
+
+    public bool Active
+    {
+        get
+        {
+            return active;
+        }
+
+        set
+        {
+            active = value;
+        }
+    }
+
+    public GameInfo GameProgress
+    {
+        get
+        {
+            return gameProgress;
+        }
+
+        set
+        {
+            gameProgress = value;
+        }
+    }
+
+    public string Nickname
+    {
+        get
+        {
+            return nickname;
+        }
+
+        set
+        {
+            nickname = value;
+        }
+    }
+
+    public string Origin
+    {
+        get
+        {
+            return origin;
+        }
+
+        set
+        {
+            origin = value;
+        }
+    }
+
+    public void addExp(int exp_gained){
 		//hay que agregar la tabla de experiencia
-		int temp = gameProgress.Exp +  exp_gained;
+		int temp = GameProgress.Exp +  exp_gained;
 
 
 		if(temp > MAX_EXP){
-			gameProgress.Exp = 0;
-			gameProgress.Level+=1;
+			GameProgress.Exp = 0;
+			GameProgress.Level+=1;
 		}
 	}
 
