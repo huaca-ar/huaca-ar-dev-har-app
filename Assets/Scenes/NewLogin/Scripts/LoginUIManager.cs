@@ -15,7 +15,7 @@ public class LoginUIManager : MonoBehaviour {
 	[SerializeField] private GameObject password;
 	[SerializeField] private GameObject nickWarning;
 	[SerializeField] private GameObject passWarning;
-	[SerializeField] private DBManager dBManager;
+	[SerializeField] private AuthManager dBManager;
 	[SerializeField] private Image logo;
 	[SerializeField] private GameObject startgame;
 	[SerializeField] private GameObject loginTitle;
@@ -174,6 +174,9 @@ public class LoginUIManager : MonoBehaviour {
 		}else{
 			femaleAvatarReg.SetActive(true);
 		}
+		// 1 hombre
+		// 2 mujer
+		PlayerPrefs.SetInt("gender",IsMale ? 1 : 0);
 		
 	}
 

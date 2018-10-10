@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameSceneManager : MonoBehaviour {
 
 	// Use this for initialization
+
+	void Start(){
+		
+	}
+
 	public void LoadMapScene(){
 		SceneManager.LoadScene(GameConstants.MAP_SCENE,LoadSceneMode.Single);
 	}	
