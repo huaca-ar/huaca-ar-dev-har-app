@@ -23,34 +23,32 @@ public class AuthManager : MonoBehaviour {
 	
 	
 	void Start(){
-		Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-			var dependencyStatus = task.Result;
-			if (dependencyStatus == Firebase.DependencyStatus.Available) {
-				// Set a flag here indiciating that Firebase is ready to use by your
-				// application.
-				usable = true;
+		// Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+		// 	var dependencyStatus = task.Result;
+		// 	if (dependencyStatus == Firebase.DependencyStatus.Available) {
+		// 		// Set a flag here indiciating that Firebase is ready to use by your
+		// 		// application.
+		// 		usable = true;
 				
-			} else {
-				UnityEngine.Debug.LogError(System.String.Format(
-				"Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-				// Firebase Unity SDK is not safe to use here.
-				usable = false;
-			}
-		});	
+		// 	} else {
+		// 		UnityEngine.Debug.LogError(System.String.Format(
+		// 		"Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+		// 		// Firebase Unity SDK is not safe to use here.
+		// 		usable = false;
+		// 	}
+		// });	
 
-		Debug.Log(usable);
+		// Debug.Log(usable);
 	}
 
 	
 
 	public void LoginUser(){
 
-		if(usable){
+		
 			string fakeEmail = nickLogin.text + SUFIX;
 			
-			Debug.Log(fakeEmail);
-
-			
+			Debug.Log(fakeEmail);	
 
 			FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(fakeEmail,passLogin.text).
 			ContinueWith((response)=>{
@@ -72,11 +70,12 @@ public class AuthManager : MonoBehaviour {
 
 				
 				statusLogin.GetComponent<Text>().text = "Bienvenid" + (PlayerPrefs.GetInt("gender")==1 ? "o" : "a") + " "  +
-				PlayerPrefs.GetString("nickname");
+					PlayerPrefs.GetString("nickname");
 				statusLogin.SetActive(true);
 				StartCoroutine(showStatusLogin(statusLogin));
 
-				
+				//Actualizar data en disco
+				SaveCurrentUserOnDisk();
 				//Solicitar data a firebase para cargar estado del juego del usuario
 
 
@@ -87,7 +86,7 @@ public class AuthManager : MonoBehaviour {
 
 			});
 
-		}
+		
 		
 	}
 
@@ -106,7 +105,7 @@ public class AuthManager : MonoBehaviour {
 	public void RegisterUser(){
 
 
-		if(usable){
+		
 			
 			string fakeEmail = nickReg.text + SUFIX;
 			Debug.Log(fakeEmail);
@@ -114,12 +113,16 @@ public class AuthManager : MonoBehaviour {
 			FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(fakeEmail,passReg.text).ContinueWith((response)=>{
 
 				if(response.IsFaulted){
-					SSTools.ShowMessage("El nick ya existe",SSTools.Position.top,SSTools.Time.twoSecond);
+					statusLogin.SetActive(true);
+					statusLogin.GetComponent<Text>().text = "Nickname ya existente";
+					StartCoroutine(showStatusLogin(statusLogin));
 					return;
 				}
 
 				if(response.IsCanceled){
-					SSTools.ShowMessage("Ocurrio un problema",SSTools.Position.bottom,SSTools.Time.twoSecond);
+					statusLogin.SetActive(true);
+					statusLogin.GetComponent<Text>().text = "Error de conexión";
+					StartCoroutine(showStatusLogin(statusLogin));
 					return;
 				}
 				
@@ -129,7 +132,11 @@ public class AuthManager : MonoBehaviour {
 				nickname = cadenas[0];
 
 				Debug.LogFormat("USERID: {0} NICK: {1}", newUser.UserId, nickname);
-				SSTools.ShowMessage("Bienvenido",SSTools.Position.bottom,SSTools.Time.oneSecond);
+
+				statusLogin.GetComponent<Text>().text = "Bienvenid" + (PlayerPrefs.GetInt("gender")==1 ? "o" : "a") + " "  +
+					PlayerPrefs.GetString("nickname");
+				statusLogin.SetActive(true);
+				StartCoroutine(showStatusLogin(statusLogin));
 
 				SaveCurrentUserOnDisk();
 				SaveUserDataOnDatabase();
@@ -139,7 +146,7 @@ public class AuthManager : MonoBehaviour {
 				
 
 			});
-		}
+		
 	}
 
 	const string userIdTag = "userid";
@@ -149,18 +156,9 @@ public class AuthManager : MonoBehaviour {
 
 		player.Nickname = nickname;
 		player.Email = nickname+ SUFIX;
-		
-
 
 		DBManager manager = FindObjectOfType<DBManager>();
-		//Deberia obtener la referencia al gameobject DBManager de la escena NewLogin
-
 		manager.SaveNewUser(player);
-
-		
-		
-		
-		
 
     }
 	void SaveCurrentUserOnDisk(){
