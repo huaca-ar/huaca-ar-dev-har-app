@@ -15,8 +15,9 @@ public class LoginUIManager : MonoBehaviour {
 	[SerializeField] private GameObject password;
 	[SerializeField] private GameObject nickWarning;
 	[SerializeField] private GameObject passWarning;
-	[SerializeField] private AuthManager dBManager;
 	[SerializeField] private Image logo;
+	
+	[SerializeField] private AuthManager authManager;
 	[SerializeField] private GameObject startgame;
 	[SerializeField] private GameObject loginTitle;
 	[SerializeField] private GameObject chooseAvatarCanvas;
@@ -61,6 +62,21 @@ public class LoginUIManager : MonoBehaviour {
         }
     }
 
+
+	void Start(){
+
+		//probar con el login
+		InputField nickLogin = nickname.GetComponent<InputField>();
+		nickLogin.onEndEdit.AddListener(delegate{
+			ValidateNickname(nickLogin.text);
+			});
+
+		InputField passLogin = password.GetComponent<InputField>();
+		passLogin.onEndEdit.AddListener(delegate{
+			ValidatePassword(passLogin.text);
+		});
+		
+	}
     public void NewUserButtonPressed(){
 		chooseAvatarCanvas.SetActive(true);
 		firstCanvas.SetActive(false);
@@ -73,7 +89,10 @@ public class LoginUIManager : MonoBehaviour {
 
 		Vector3 position = logo.transform.position;
 		logo.SetNativeSize();
-		logo.transform.position = position + new Vector3(0,106,0);
+		logo.rectTransform.position = position + new Vector3(0,7,0);
+		
+
+		
 	
 	}
     public void ExistingUserButtonPressed(){
@@ -92,20 +111,18 @@ public class LoginUIManager : MonoBehaviour {
 	}
 
 
-	public void validateNickname(){
-		InputField myField = nickname.GetComponent<InputField>();
+	public void ValidateNickname(string value){
 
-
-		if(myField.text.Length==0){
-			SSTools.ShowMessage("Ingresar nickname",SSTools.Position.bottom,SSTools.Time.oneSecond);
+		if(value.Length==0){
+			nickWarning.GetComponent<Text>().text = "Debe ingresar un nickname";
 			IsValidData=false;
 			nickWarning.SetActive(true);
 			return ;
 		}
 
-		if(myField.text.Length<4){
+		if(value.Length<4){
 			IsValidData=false;
-			SSTools.ShowMessage("Nick muy corto",SSTools.Position.bottom,SSTools.Time.oneSecond);
+			nickWarning.GetComponent<Text>().text = "Nickname muy corto";
 			nickWarning.SetActive(true);
 			return;
 		}
@@ -114,20 +131,18 @@ public class LoginUIManager : MonoBehaviour {
 		
 	}
 	
-	public void validatePassword(){
+	public void ValidatePassword(string myField){
 
-		InputField myField = password.GetComponent<InputField>();
-
-		if(myField.text.Length==0){
+		if(myField.Length==0){
 			IsValidData=false;
-			SSTools.ShowMessage("Ingresar contraseña",SSTools.Position.bottom,SSTools.Time.oneSecond);
 			passWarning.SetActive(true);
+			passWarning.GetComponent<Text>().text = "Debe ingresar una contraseña";
 			return ;
 		}
-		if(myField.text.Length<6){
+		if(myField.Length<6){
 			IsValidData=false;
-			SSTools.ShowMessage("Contraseña muy corta",SSTools.Position.bottom,SSTools.Time.oneSecond);
 			passWarning.SetActive(true);
+			passWarning.GetComponent<Text>().text = "Contraseña muy corta";
 			return;
 		}
 
@@ -143,12 +158,11 @@ public class LoginUIManager : MonoBehaviour {
 		Debug.LogFormat("Es data valida {0}",isValidData.ToString());
 
 		if(IsValidData){			
-			dBManager.LoginButtonPressed();
+			authManager.LoginUser();
 			passWarning.SetActive(false);
 			nickWarning.SetActive(false);
 			
 		}
-	
 		
 	}
 
@@ -175,7 +189,7 @@ public class LoginUIManager : MonoBehaviour {
 			femaleAvatarReg.SetActive(true);
 		}
 		// 1 hombre
-		// 2 mujer
+		// 0 mujer
 		PlayerPrefs.SetInt("gender",IsMale ? 1 : 0);
 		
 	}

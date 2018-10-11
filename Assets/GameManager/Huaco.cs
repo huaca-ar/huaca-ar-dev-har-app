@@ -1,15 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Huaco  {
 
-	private string type;
-	private int id;
-	private string name; // nombre del modelo 3D
 
-	private double latitud;
-	private double longitud;
+	[SerializeField] private string type;
+	[SerializeField] private int id;
+	[SerializeField] private string name; // nombre del modelo 3D
+    [SerializeField] private double latitud;
+	[SerializeField] private double longitud;
 
 	public Huaco(){
 

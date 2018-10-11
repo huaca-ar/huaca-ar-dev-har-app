@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
@@ -10,9 +11,11 @@ public class DBManager : MonoBehaviour {
 	// Use this for initialization
 
 	DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
-	DatabaseReference rootReference =  FirebaseDatabase.DefaultInstance.RootReference;
+	DatabaseReference rootReference;
 
 	protected virtual void Start () {
+
+		rootReference =  FirebaseDatabase.DefaultInstance.RootReference;
 		
 		FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
         dependencyStatus = task.Result;
@@ -48,12 +51,85 @@ public class DBManager : MonoBehaviour {
 
 	public void SaveNewUser(Player player){
 
-		DatabaseReference currentUserReference = rootReference.Child(PlayerPrefs.GetString("userid"));
+		DatabaseReference currentUserReference = rootReference.Child("Users").Child(PlayerPrefs.GetString("userid"));
 		string json = JsonUtility.ToJson(player);
+		Debug.LogFormat("User ID en playerprefs: {0}", PlayerPrefs.GetString("userid"));
 
 		Debug.Log("Intento guardar datos en firebase");
-		currentUserReference.SetRawJsonValueAsync(json);
+		Debug.LogFormat("Json generado: \n {0}", json);
+		currentUserReference.SetRawJsonValueAsync(json,1);
+
+		HuacoCollection coleccion = new HuacoCollection();
+		json = JsonUtility.ToJson(coleccion);
+
+
+		currentUserReference.Child("recolectedItems").SetRawJsonValueAsync(json);
+
+		Awards awards = new Awards();
+		json= JsonUtility.ToJson(awards);
+
+		currentUserReference.Child("awards").SetRawJsonValueAsync(json);
+
+
+	}
+
+	public void TestSave(){
+
+		//recolectedItems
+		HuacoCollection coleccion = new HuacoCollection();
+
+		Huaco botella = new Huaco();
+
+		botella.Name= "botella N123";
+		botella.Latitud = 123.23111;
+		botella.Longitud = 12.7231;
+		botella.Id = 12;
+		botella.Type= "botella";
 		
+		
+		Huaco figurine = new Huaco();
+
+		figurine.Name= "botella N123";
+		figurine.Latitud = 123.23111;
+		figurine.Longitud = 12.7231;
+		figurine.Id = 12;
+		
+		figurine.Type = "figurine";
+		Huaco pitcher = new Huaco();
+
+		pitcher.Name= "botella N123";
+		pitcher.Latitud = 123.23111;
+		pitcher.Longitud = 12.7231;
+		pitcher.Id = 12;
+		pitcher.Type= "pitchers";
+		
+		Huaco pot = new Huaco();
+
+		pot.Name= "botella N123";
+		pot.Latitud = 123.23111;
+		pot.Longitud = 12.7231;
+		pot.Id = 12;
+		pot.Type = "figurine";
+
+		coleccion.Bottles.Add(botella);
+		coleccion.Bottles.Add(botella);
+
+		coleccion.Figurines.Add(figurine);
+		coleccion.Figurines.Add(figurine);
+		coleccion.Figurines.Add(figurine);
+		coleccion.Pitchers.Add(pitcher);
+		coleccion.Pitchers.Add(pitcher);
+		coleccion.Pitchers.Add(pitcher);
+		coleccion.Pitchers.Add(pitcher);
+		coleccion.Pot.Add(pot);
+		
+
+		DatabaseReference testUserReference = rootReference.Child("Users").Child("iy0z2HeNGhVselzhKggHfWyPUt42");
+
+		string json =  JsonUtility.ToJson(coleccion);
+
+		Debug.LogFormat("Json: {0}",json);
+		testUserReference.SetRawJsonValueAsync(json);
 
 	}
 

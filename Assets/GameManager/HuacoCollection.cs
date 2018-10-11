@@ -1,21 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[Serializable]
 public class HuacoCollection  {
 
 	// Use this for initialization
-	private List<Huaco> bottles;
-	private List<Huaco> figurines;
-	private List<Huaco> pitchers;
-	private List<Huaco> pot;
-	private int current_bottles;
-	private int current_pitchers;
-	private int current_pots;
-	private int current_figurines;
+	[SerializeField]private List<Huaco> bottles;
+	[SerializeField]private List<Huaco> figurines;
+	[SerializeField]private List<Huaco> pitchers;
+	[SerializeField]private List<Huaco> pot;
+	[SerializeField]private int current_bottles;
+	[SerializeField]private int current_pitchers;
+	[SerializeField]private int current_pots;
+	[SerializeField]private int current_figurines;
 
     public HuacoCollection(){
-        bottles = new List<Huaco>();
+        bottles =    new List<Huaco>();
         figurines = new List<Huaco>();
         pitchers = new List<Huaco>();
         pot = new List<Huaco>();

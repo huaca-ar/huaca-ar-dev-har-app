@@ -8,7 +8,6 @@ public class GameInfo {
 	private int gender;
 	private bool isTutorialDone;
 	private int level;
-	private HuacoCollection recolectedItems;
 
 	public GameInfo(){
 		
@@ -66,18 +65,7 @@ public class GameInfo {
         }
     }
 
-    public HuacoCollection RecolectedItems
-    {
-        get
-        {
-            return recolectedItems;
-        }
-
-        set
-        {
-            recolectedItems = value;
-        }
-    }
+    
 
 
 

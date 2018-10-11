@@ -3,23 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+[Serializable]
+public class Player  {
 
 	// Use this for initialization
 	// private string uuid;
-	private DateTime createdAt;
-	private bool active;
-	private GameInfo gameProgress;
-	private string nickname;
-	private string origin; // diferenciar google de local
-	const int MAX_EXP = 100;
+	// private GameInfo gameProgress;
+	
+    [SerializeField] private string createdAt;
+	[SerializeField] private bool active;
+    [SerializeField] private string email;
+	[SerializeField] private string nickname;
+	[SerializeField] private string origin; // diferenciar google de local
+    [SerializeField] private int exp;
+    [SerializeField] private int level;
+    [SerializeField]  private int gender;
+    [SerializeField] private bool isTutorialDone;
+    
+    [SerializeField] private Awards awards;
 
 
 
-    public Player (){
 
-    }
-    public DateTime CreatedAt
+
+    public string CreatedAt
     {
         get
         {
@@ -42,19 +49,6 @@ public class Player : MonoBehaviour {
         set
         {
             active = value;
-        }
-    }
-
-    public GameInfo GameProgress
-    {
-        get
-        {
-            return gameProgress;
-        }
-
-        set
-        {
-            gameProgress = value;
         }
     }
 
@@ -84,25 +78,98 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void addExp(int exp_gained){
-		//hay que agregar la tabla de experiencia
-		int temp = GameProgress.Exp +  exp_gained;
+   
 
+    public int Exp
+    {
+        get
+        {
+            return exp;
+        }
 
-		if(temp > MAX_EXP){
-			GameProgress.Exp = 0;
-			GameProgress.Level+=1;
-		}
-	}
+        set
+        {
+            exp = value;
+        }
+    }
 
+    public int Level
+    {
+        get
+        {
+            return level;
+        }
 
+        set
+        {
+            level = value;
+        }
+    }
 
-	void Start () {
+    public int Gender
+    {
+        get
+        {
+            return gender;
+        }
+
+        set
+        {
+            gender = value;
+        }
+    }
+
+    public bool IsTutorialDone
+    {
+        get
+        {
+            return isTutorialDone;
+        }
+
+        set
+        {
+            isTutorialDone = value;
+        }
+    }
+
+    public string Email
+    {
+        get
+        {
+            return email;
+        }
+
+        set
+        {
+            email = value;
+        }
+    }
+
+    public Awards Awards
+    {
+        get
+        {
+            return awards;
+        }
+
+        set
+        {
+            awards = value;
+        }
+    }
+
+    public Player(){
+        
+        CreatedAt = System.DateTime.Now.ToString();
+		Active = true;
+		Origin = "App";
+		Exp = 0;
+		Level = 1;
+		IsTutorialDone = false;
 		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+
+
+    
 }

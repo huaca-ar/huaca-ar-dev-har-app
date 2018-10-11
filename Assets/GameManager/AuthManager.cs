@@ -18,6 +18,8 @@ public class AuthManager : MonoBehaviour {
 	// Use this for initialization
 	[SerializeField] private InputField nickReg, passReg;
 
+	[SerializeField] private GameObject statusLogin;
+
 	
 	
 	void Start(){
@@ -41,12 +43,14 @@ public class AuthManager : MonoBehaviour {
 
 	
 
-	public void LoginButtonPressed(){
+	public void LoginUser(){
 
 		if(usable){
 			string fakeEmail = nickLogin.text + SUFIX;
 			
 			Debug.Log(fakeEmail);
+
+			
 
 			FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(fakeEmail,passLogin.text).
 			ContinueWith((response)=>{
@@ -56,18 +60,28 @@ public class AuthManager : MonoBehaviour {
 				}
 				if(response.IsFaulted){
 					Debug.LogError("USUARIO O CONTRASEÑA INCORRECTOS");
-					SSTools.ShowMessage("Usuario o Contraseña incorrectos", SSTools.Position.bottom,SSTools.Time.twoSecond);
+
+					statusLogin.SetActive(true);
+					statusLogin.GetComponent<Text>().text = "Usuario o Contraseña incorrectos";
+					StartCoroutine(showStatusLogin(statusLogin));
+
 				}
 
 				FirebaseUser user = response.Result;
 				Debug.LogFormat("Usuario logueado: {0}  {1}", user.Email, user.UserId);
-				SSTools.ShowMessage("Bienvenido",SSTools.Position.bottom,SSTools.Time.twoSecond);
+
+				
+				statusLogin.GetComponent<Text>().text = "Bienvenid" + (PlayerPrefs.GetInt("gender")==1 ? "o" : "a") + " "  +
+				PlayerPrefs.GetString("nickname");
+				statusLogin.SetActive(true);
+				StartCoroutine(showStatusLogin(statusLogin));
+
 				
 				//Solicitar data a firebase para cargar estado del juego del usuario
 
 
 				//esta actividad no deberia hacerse aca pero bue
-				GameSceneManager manager =  new GameSceneManager();
+				GameSceneManager manager =  FindObjectOfType<GameSceneManager>();
 				manager.LoadMapScene();
 
 
@@ -75,9 +89,11 @@ public class AuthManager : MonoBehaviour {
 
 		}
 		
-	
-		
-		
+	}
+
+	IEnumerator showStatusLogin(GameObject gameObject){
+		yield return new WaitForSeconds(2);
+		gameObject.SetActive(false);
 	}
 
 	
@@ -99,10 +115,12 @@ public class AuthManager : MonoBehaviour {
 
 				if(response.IsFaulted){
 					SSTools.ShowMessage("El nick ya existe",SSTools.Position.top,SSTools.Time.twoSecond);
+					return;
 				}
 
 				if(response.IsCanceled){
 					SSTools.ShowMessage("Ocurrio un problema",SSTools.Position.bottom,SSTools.Time.twoSecond);
+					return;
 				}
 				
 				FirebaseUser newUser = response.Result;
@@ -116,9 +134,9 @@ public class AuthManager : MonoBehaviour {
 				SaveCurrentUserOnDisk();
 				SaveUserDataOnDatabase();
 
-				//esta actividad no deberia hacerse aca pero bue
-				GameSceneManager manager =  new GameSceneManager();
-				manager.LoadMapScene();
+				GameSceneManager sceneManager = FindObjectOfType<GameSceneManager>();
+				sceneManager.LoadMapScene();
+				
 
 			});
 		}
@@ -129,24 +147,19 @@ public class AuthManager : MonoBehaviour {
 	void SaveUserDataOnDatabase(){
 		Player player = new Player();
 
-		player.CreatedAt = System.DateTime.Now;
-		player.Active = true;
 		player.Nickname = nickname;
-		player.Origin = "Aplicacion";
+		player.Email = nickname+ SUFIX;
+		
 
-		GameInfo progress = new GameInfo();
-		progress.Exp= 0;
-		progress.Gender = PlayerPrefs.GetInt("gender");
-		progress.Level = 1;
-		progress.IsTutorialDone = false;
-		progress.RecolectedItems = new HuacoCollection();
-
-		player.GameProgress=progress;
 
 		DBManager manager = FindObjectOfType<DBManager>();
 		//Deberia obtener la referencia al gameobject DBManager de la escena NewLogin
 
 		manager.SaveNewUser(player);
+
+		
+		
+		
 		
 
     }
@@ -155,6 +168,7 @@ public class AuthManager : MonoBehaviour {
 
 		PlayerPrefs.SetString(userIdTag,currentUser.UserId);
 		PlayerPrefs.SetString("nickname",nickname);
+		
 		
 
 
