@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Firebase.Database;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +33,19 @@ public class ExcavationAreaInteraction : MonoBehaviour {
 			Debug.Log("Se realiza la transicion hacia la ventana de Find Canvas");
 			extractionCanvas.SetActive(false);
 			findCanvas.SetActive(true);
+
+			//guardar avance
+			int exp = 0;
+			int temp = 0;
+			temp = PlayerPrefs.GetInt("exp");
+			exp += temp;
+			exp+= 500;
+
+			PlayerPrefs.SetInt("exp",exp);
+
+			DatabaseReference personalInfo = FirebaseDatabase.DefaultInstance.RootReference.Child("Users").Child(PlayerPrefs.GetString("userid")).Child("PersonalInfo");
+
+			personalInfo.Child("exp").SetValueAsync(exp);
 		}
 	}
 }

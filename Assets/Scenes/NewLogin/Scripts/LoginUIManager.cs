@@ -15,8 +15,9 @@ public class LoginUIManager : MonoBehaviour {
 	[SerializeField] private GameObject password;
 	[SerializeField] private GameObject nickWarning;
 	[SerializeField] private GameObject passWarning;
-	[SerializeField] private DBManager dBManager;
 	[SerializeField] private Image logo;
+	
+	[SerializeField] private AuthManager authManager;
 	[SerializeField] private GameObject startgame;
 	[SerializeField] private GameObject loginTitle;
 	[SerializeField] private GameObject chooseAvatarCanvas;
@@ -28,6 +29,13 @@ public class LoginUIManager : MonoBehaviour {
 	[SerializeField] private GameObject registerAccountCanvas;
 	[SerializeField] private GameObject maleAvatarReg;
 	[SerializeField] private GameObject femaleAvatarReg;
+	
+	[SerializeField] private GameObject nickReg;
+	[SerializeField] private GameObject passReg;
+
+	[SerializeField] private GameObject nickWarningReg;
+	
+	[SerializeField] private GameObject passWarningReg;
 
 
 
@@ -61,6 +69,45 @@ public class LoginUIManager : MonoBehaviour {
         }
     }
 
+
+	void Start(){
+
+		//probar con el login
+		// InputField nickLogin = nickname.GetComponent<InputField>();
+		// nickLogin.onEndEdit.AddListener(delegate{
+		// 	ValidateNickname(nickLogin.text);
+		// 	});
+
+		// InputField passLogin = password.GetComponent<InputField>();
+		// passLogin.onEndEdit.AddListener(delegate{
+		// 	ValidatePassword(passLogin.text);
+		// });
+
+		AddListenerPass(passReg, passWarning);
+		AddListenerNick(nickReg, nickWarning) ;
+		AddListenerNick(nickname, nickWarningReg);
+		AddListenerPass(password, passWarningReg);
+
+		//Eliminar todas las claves cuando inicia el juego
+		// PlayerPrefs.DeleteAll();
+		
+	}
+
+	void AddListenerPass(GameObject gameObject, GameObject warn){
+		InputField myfield = gameObject.GetComponent<InputField>();
+		myfield.onEndEdit.AddListener(delegate{
+			ValidatePassword(myfield.text, warn);
+		});
+
+	}
+
+	void AddListenerNick(GameObject gameObject, GameObject warn){
+		InputField myfield = gameObject.GetComponent<InputField>();
+		myfield.onEndEdit.AddListener(delegate{
+			ValidateNickname(myfield.text, warn);
+		});
+
+	}
     public void NewUserButtonPressed(){
 		chooseAvatarCanvas.SetActive(true);
 		firstCanvas.SetActive(false);
@@ -73,7 +120,10 @@ public class LoginUIManager : MonoBehaviour {
 
 		Vector3 position = logo.transform.position;
 		logo.SetNativeSize();
-		logo.transform.position = position + new Vector3(0,106,0);
+		logo.rectTransform.position = position + new Vector3(0,7,0);
+		
+
+		
 	
 	}
     public void ExistingUserButtonPressed(){
@@ -92,47 +142,43 @@ public class LoginUIManager : MonoBehaviour {
 	}
 
 
-	public void validateNickname(){
-		InputField myField = nickname.GetComponent<InputField>();
+	public void ValidateNickname(string value, GameObject nickWarn){
 
-
-		if(myField.text.Length==0){
-			SSTools.ShowMessage("Ingresar nickname",SSTools.Position.bottom,SSTools.Time.oneSecond);
+		if(value.Length==0){
+			nickWarn.GetComponent<Text>().text = "Debe ingresar un nickname";
 			IsValidData=false;
-			nickWarning.SetActive(true);
+			nickWarn.SetActive(true);
 			return ;
 		}
 
-		if(myField.text.Length<4){
+		if(value.Length<4){
 			IsValidData=false;
-			SSTools.ShowMessage("Nick muy corto",SSTools.Position.bottom,SSTools.Time.oneSecond);
-			nickWarning.SetActive(true);
+			nickWarn.GetComponent<Text>().text = "Nickname muy corto";
+			nickWarn.SetActive(true);
 			return;
 		}
 		IsValidData=true;
-		nickWarning.SetActive(false);
+		nickWarn.SetActive(false);
 		
 	}
 	
-	public void validatePassword(){
+	public void ValidatePassword(string myField, GameObject passWarn){
 
-		InputField myField = password.GetComponent<InputField>();
-
-		if(myField.text.Length==0){
+		if(myField.Length==0){
 			IsValidData=false;
-			SSTools.ShowMessage("Ingresar contraseña",SSTools.Position.bottom,SSTools.Time.oneSecond);
-			passWarning.SetActive(true);
+			passWarn.SetActive(true);
+			passWarn.GetComponent<Text>().text = "Debe ingresar una contraseña";
 			return ;
 		}
-		if(myField.text.Length<6){
+		if(myField.Length<6){
 			IsValidData=false;
-			SSTools.ShowMessage("Contraseña muy corta",SSTools.Position.bottom,SSTools.Time.oneSecond);
-			passWarning.SetActive(true);
+			passWarn.SetActive(true);
+			passWarn.GetComponent<Text>().text = "Contraseña muy corta";
 			return;
 		}
 
 		IsValidData=true;
-		passWarning.SetActive(false);
+		passWarn.SetActive(false);
 
 	}
 
@@ -143,15 +189,40 @@ public class LoginUIManager : MonoBehaviour {
 		Debug.LogFormat("Es data valida {0}",isValidData.ToString());
 
 		if(IsValidData){			
-			dBManager.LoginButtonPressed();
+			authManager.LoginUser();
 			passWarning.SetActive(false);
 			nickWarning.SetActive(false);
 			
 		}
-	
 		
 	}
 
+
+	public void NextButtonPressed(){
+		chooseAvatarCanvas.SetActive(false);
+		registerAccountCanvas.SetActive(true);
+		if(IsMale){
+			maleAvatarReg.SetActive(true);
+		}else{
+			femaleAvatarReg.SetActive(true);
+		}
+		// 1 hombre
+		// 0 mujer
+		PlayerPrefs.SetInt("gender",IsMale ? 1 : 0);
+	
+	}
+
+	public void RegisterButtonPressed(){
+		Debug.LogFormat("En el registro es data valida {0}",isValidData.ToString());
+
+		if(IsValidData){			
+			authManager.RegisterUser();
+			passWarningReg.SetActive(false);
+			nickWarningReg.SetActive(false);
+			
+		}
+
+	}
 	public void MaleButtonPressed(){
 		maleAvatar.SetActive(true);
 		femaleAvatar.SetActive(false);
@@ -165,17 +236,7 @@ public class LoginUIManager : MonoBehaviour {
 
 		Debug.LogFormat("Escoge mujer : {0}", (!IsMale).ToString() );
 	}
-
-	public void NextButtonPressed(){
-		chooseAvatarCanvas.SetActive(false);
-		registerAccountCanvas.SetActive(true);
-		if(IsMale){
-			maleAvatarReg.SetActive(true);
-		}else{
-			femaleAvatarReg.SetActive(true);
-		}
-		
-	}
+	
 
 
 }

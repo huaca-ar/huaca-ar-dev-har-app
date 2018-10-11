@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -696,7 +696,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 695392363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000047854}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0023}
   m_LocalScale: {x: 0.023789829, y: 0.023789829, z: 0.023789829}
   m_Children:
   - {fileID: 1804727251}
@@ -705,8 +705,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000059604645, y: -0.0000007748604}
-  m_SizeDelta: {x: 155.57999, y: 18.970001}
+  m_AnchoredPosition: {x: 0.0020000935, y: -0.008700013}
+  m_SizeDelta: {x: 159.838, y: 26.6787}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695392365
 MonoBehaviour:
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 742395989}
   - component: {fileID: 742395988}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SendButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -831,7 +831,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 742395989}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2107027119}
+        m_MethodName: LoadMapScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &742395989
@@ -1518,7 +1529,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1804727250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2106698661}
@@ -1527,7 +1538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.8199997, y: -0.14999962}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1826724497
@@ -1684,7 +1695,7 @@ GameObject:
   - component: {fileID: 2107027120}
   - component: {fileID: 2107027119}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
