@@ -88,7 +88,8 @@ public class LoginUIManager : MonoBehaviour {
 		AddListenerNick(nickname, nickWarningReg);
 		AddListenerPass(password, passWarningReg);
 
-
+		//Eliminar todas las claves cuando inicia el juego
+		// PlayerPrefs.DeleteAll();
 		
 	}
 

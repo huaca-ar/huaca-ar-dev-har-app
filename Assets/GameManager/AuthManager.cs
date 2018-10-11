@@ -20,7 +20,7 @@ public class AuthManager : MonoBehaviour {
 
 	[SerializeField] private GameObject statusLogin;
 
-	
+	[SerializeField] private GameObject dbManager;
 	
 	void Start(){
 		// Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
@@ -68,22 +68,25 @@ public class AuthManager : MonoBehaviour {
 				FirebaseUser user = response.Result;
 				Debug.LogFormat("Usuario logueado: {0}  {1}", user.Email, user.UserId);
 
+				string []cadenas =  user.Email.Split('@');
+
+				nickname=cadenas[0];
 				
-				statusLogin.GetComponent<Text>().text = "Bienvenid" + (PlayerPrefs.GetInt("gender")==1 ? "o" : "a") + " "  +
-					PlayerPrefs.GetString("nickname");
-				statusLogin.SetActive(true);
-				StartCoroutine(showStatusLogin(statusLogin));
+				
 
 				//Actualizar data en disco
-				SaveCurrentUserOnDisk();
 				//Solicitar data a firebase para cargar estado del juego del usuario
+				PlayerPrefs.SetString("userid",user.UserId);
 
-
-				//esta actividad no deberia hacerse aca pero bue
-				GameSceneManager manager =  FindObjectOfType<GameSceneManager>();
-				manager.LoadMapScene();
-
-
+				statusLogin.GetComponent<Text>().text = "Bienvenid@" + " "  + nickname;
+				statusLogin.SetActive(true);			
+				StartCoroutine(showStatusLogin(statusLogin));
+				
+				Debug.Log("cargar escena mapa");
+				GameSceneManager sceneManager = FindObjectOfType<GameSceneManager>();
+				sceneManager.LoadMapScene();
+				
+				
 			});
 
 		
@@ -133,13 +136,14 @@ public class AuthManager : MonoBehaviour {
 
 				Debug.LogFormat("USERID: {0} NICK: {1}", newUser.UserId, nickname);
 
-				statusLogin.GetComponent<Text>().text = "Bienvenid" + (PlayerPrefs.GetInt("gender")==1 ? "o" : "a") + " "  +
-					PlayerPrefs.GetString("nickname");
-				statusLogin.SetActive(true);
+				
+				SaveUserDataOnDatabase();
+
+				statusLogin.GetComponent<Text>().text = "Bienvenid" + (PlayerPrefs.GetInt("gender")==1 ? "o" : "a") + " "  + nickname;
+				statusLogin.SetActive(true);			
 				StartCoroutine(showStatusLogin(statusLogin));
 
-				SaveCurrentUserOnDisk();
-				SaveUserDataOnDatabase();
+				PlayerPrefs.SetInt("exp", 0);
 
 				GameSceneManager sceneManager = FindObjectOfType<GameSceneManager>();
 				sceneManager.LoadMapScene();
@@ -152,23 +156,15 @@ public class AuthManager : MonoBehaviour {
 	const string userIdTag = "userid";
 
 	void SaveUserDataOnDatabase(){
-		Player player = new Player();
+		PersonalInfo personalInfo = new PersonalInfo();
 
-		player.Nickname = nickname;
-		player.Email = nickname+ SUFIX;
+		personalInfo.Nickname = nickname;
+		personalInfo.Email = nickname+ SUFIX;
+		
 
-		DBManager manager = FindObjectOfType<DBManager>();
-		manager.SaveNewUser(player);
+		DBManager dBManager = FindObjectOfType<DBManager>();
+		dBManager.SaveNewUser(personalInfo);
 
     }
-	void SaveCurrentUserOnDisk(){
-		FirebaseUser currentUser = FirebaseAuth.DefaultInstance.CurrentUser;
-
-		PlayerPrefs.SetString(userIdTag,currentUser.UserId);
-		PlayerPrefs.SetString("nickname",nickname);
-		
-		
-
-
-	}
+	
 }
