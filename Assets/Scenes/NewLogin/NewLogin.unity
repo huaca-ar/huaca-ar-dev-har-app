@@ -767,8 +767,8 @@ MonoBehaviour:
   femaleAvatarReg: {fileID: 1578189783}
   nickReg: {fileID: 57800793}
   passReg: {fileID: 132543963}
-  nickWarningReg: {fileID: 1445180075}
-  passWarningReg: {fileID: 1027205208}
+  nickWarningReg: {fileID: 1204181314}
+  passWarningReg: {fileID: 1596235337}
 --- !u!1 &132543963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,8 +1000,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1204181315}
   - {fileID: 1596235338}
+  - {fileID: 1204181315}
   - {fileID: 1445180076}
   - {fileID: 1027205209}
   - {fileID: 10911758}
@@ -1152,7 +1152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &170679595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3571,14 +3571,14 @@ RectTransform:
   m_GameObject: {fileID: 1204181314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 0.03901015, y: 0.03901015, z: 0.03901015}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 141298926}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -719.8537, y: -1489.1206}
+  m_AnchoredPosition: {x: 0, y: -437}
   m_SizeDelta: {x: 950, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204181316
@@ -4270,14 +4270,14 @@ RectTransform:
   m_GameObject: {fileID: 1596235337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 0.03901015, y: 0.03901015, z: 0.03901015}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 141298926}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -720.1209, y: -1504.04}
+  m_AnchoredPosition: {x: 0, y: -783}
   m_SizeDelta: {x: 950, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596235339
