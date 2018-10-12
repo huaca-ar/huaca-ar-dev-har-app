@@ -120,7 +120,7 @@ public class LoginUIManager : MonoBehaviour {
 
 		Vector3 position = logo.transform.position;
 		logo.SetNativeSize();
-		logo.rectTransform.position = position + new Vector3(0,7,0);
+		logo.rectTransform.position = position + new Vector3(0,180,0);
 		
 
 		
