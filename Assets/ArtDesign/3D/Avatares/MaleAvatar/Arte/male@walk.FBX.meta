@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: e0fd2163289bd2b4fb6f31cc67d6bda4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: "ni\xF1o"
+    100004: "ni\xF1o Head"
+    100006: "ni\xF1o L Calf"
+    100008: "ni\xF1o L Clavicle"
+    100010: "ni\xF1o L Finger0"
+    100012: "ni\xF1o L Finger01"
+    100014: "ni\xF1o L Finger02"
+    100016: "ni\xF1o L Finger1"
+    100018: "ni\xF1o L Finger11"
+    100020: "ni\xF1o L Finger12"
+    100022: "ni\xF1o L Finger2"
+    100024: "ni\xF1o L Finger21"
+    100026: "ni\xF1o L Finger22"
+    100028: "ni\xF1o L Finger3"
+    100030: "ni\xF1o L Finger31"
+    100032: "ni\xF1o L Finger32"
+    100034: "ni\xF1o L Finger4"
+    100036: "ni\xF1o L Finger41"
+    100038: "ni\xF1o L Finger42"
+    100040: "ni\xF1o L Foot"
+    100042: "ni\xF1o L Forearm"
+    100044: "ni\xF1o L Hand"
+    100046: "ni\xF1o L Thigh"
+    100048: "ni\xF1o L Toe0"
+    100050: "ni\xF1o L UpperArm"
+    100052: "ni\xF1o Neck"
+    100054: "ni\xF1o Pelvis"
+    100056: "ni\xF1o R Calf"
+    100058: "ni\xF1o R Clavicle"
+    100060: "ni\xF1o R Finger0"
+    100062: "ni\xF1o R Finger01"
+    100064: "ni\xF1o R Finger02"
+    100066: "ni\xF1o R Finger1"
+    100068: "ni\xF1o R Finger11"
+    100070: "ni\xF1o R Finger12"
+    100072: "ni\xF1o R Finger2"
+    100074: "ni\xF1o R Finger21"
+    100076: "ni\xF1o R Finger22"
+    100078: "ni\xF1o R Finger3"
+    100080: "ni\xF1o R Finger31"
+    100082: "ni\xF1o R Finger32"
+    100084: "ni\xF1o R Finger4"
+    100086: "ni\xF1o R Finger41"
+    100088: "ni\xF1o R Finger42"
+    100090: "ni\xF1o R Foot"
+    100092: "ni\xF1o R Forearm"
+    100094: "ni\xF1o R Hand"
+    100096: "ni\xF1o R Thigh"
+    100098: "ni\xF1o R Toe0"
+    100100: "ni\xF1o R UpperArm"
+    100102: "ni\xF1o Spine"
+    100104: "ni\xF1o Spine1"
+    400000: //RootNode
+    400002: "ni\xF1o"
+    400004: "ni\xF1o Head"
+    400006: "ni\xF1o L Calf"
+    400008: "ni\xF1o L Clavicle"
+    400010: "ni\xF1o L Finger0"
+    400012: "ni\xF1o L Finger01"
+    400014: "ni\xF1o L Finger02"
+    400016: "ni\xF1o L Finger1"
+    400018: "ni\xF1o L Finger11"
+    400020: "ni\xF1o L Finger12"
+    400022: "ni\xF1o L Finger2"
+    400024: "ni\xF1o L Finger21"
+    400026: "ni\xF1o L Finger22"
+    400028: "ni\xF1o L Finger3"
+    400030: "ni\xF1o L Finger31"
+    400032: "ni\xF1o L Finger32"
+    400034: "ni\xF1o L Finger4"
+    400036: "ni\xF1o L Finger41"
+    400038: "ni\xF1o L Finger42"
+    400040: "ni\xF1o L Foot"
+    400042: "ni\xF1o L Forearm"
+    400044: "ni\xF1o L Hand"
+    400046: "ni\xF1o L Thigh"
+    400048: "ni\xF1o L Toe0"
+    400050: "ni\xF1o L UpperArm"
+    400052: "ni\xF1o Neck"
+    400054: "ni\xF1o Pelvis"
+    400056: "ni\xF1o R Calf"
+    400058: "ni\xF1o R Clavicle"
+    400060: "ni\xF1o R Finger0"
+    400062: "ni\xF1o R Finger01"
+    400064: "ni\xF1o R Finger02"
+    400066: "ni\xF1o R Finger1"
+    400068: "ni\xF1o R Finger11"
+    400070: "ni\xF1o R Finger12"
+    400072: "ni\xF1o R Finger2"
+    400074: "ni\xF1o R Finger21"
+    400076: "ni\xF1o R Finger22"
+    400078: "ni\xF1o R Finger3"
+    400080: "ni\xF1o R Finger31"
+    400082: "ni\xF1o R Finger32"
+    400084: "ni\xF1o R Finger4"
+    400086: "ni\xF1o R Finger41"
+    400088: "ni\xF1o R Finger42"
+    400090: "ni\xF1o R Foot"
+    400092: "ni\xF1o R Forearm"
+    400094: "ni\xF1o R Hand"
+    400096: "ni\xF1o R Thigh"
+    400098: "ni\xF1o R Toe0"
+    400100: "ni\xF1o R UpperArm"
+    400102: "ni\xF1o Spine"
+    400104: "ni\xF1o Spine1"
+    7400000: walk
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: ea4f8c8fb35be134380fe125e37c33c0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: cabello013
+    100002: cabello015
+    100004: cabello028
+    100006: cabello029
+    100008: cabello030
+    100010: cabello033
+    100012: cabello034
+    100014: cabello035
+    100016: cabello036
+    100018: cabello037
+    100020: cabello038
+    100022: cabello039
+    100024: cabello040
+    100026: cabello041
+    100028: cabello042
+    100030: cabello043
+    100032: cabello044
+    100034: cabello045
+    100036: cabello046
+    100038: cabello047
+    100040: cabello048
+    100042: cabello049
+    100044: chaleco
+    100046: cuerpo
+    100048: //RootNode
+    100050: mandibula
+    100052: "ni\xF1o"
+    100054: "ni\xF1o Head"
+    100056: "ni\xF1o HeadNub"
+    100058: "ni\xF1o L Calf"
+    100060: "ni\xF1o L Clavicle"
+    100062: "ni\xF1o L Finger0"
+    100064: "ni\xF1o L Finger01"
+    100066: "ni\xF1o L Finger02"
+    100068: "ni\xF1o L Finger0Nub"
+    100070: "ni\xF1o L Finger1"
+    100072: "ni\xF1o L Finger11"
+    100074: "ni\xF1o L Finger12"
+    100076: "ni\xF1o L Finger1Nub"
+    100078: "ni\xF1o L Finger2"
+    100080: "ni\xF1o L Finger21"
+    100082: "ni\xF1o L Finger22"
+    100084: "ni\xF1o L Finger2Nub"
+    100086: "ni\xF1o L Finger3"
+    100088: "ni\xF1o L Finger31"
+    100090: "ni\xF1o L Finger32"
+    100092: "ni\xF1o L Finger3Nub"
+    100094: "ni\xF1o L Finger4"
+    100096: "ni\xF1o L Finger41"
+    100098: "ni\xF1o L Finger42"
+    100100: "ni\xF1o L Finger4Nub"
+    100102: "ni\xF1o L Foot"
+    100104: "ni\xF1o L Forearm"
+    100106: "ni\xF1o L Hand"
+    100108: "ni\xF1o L Thigh"
+    100110: "ni\xF1o L Toe0"
+    100112: "ni\xF1o L Toe0Nub"
+    100114: "ni\xF1o L UpperArm"
+    100116: "ni\xF1o Neck"
+    100118: "ni\xF1o Pelvis"
+    100120: "ni\xF1o R Calf"
+    100122: "ni\xF1o R Clavicle"
+    100124: "ni\xF1o R Finger0"
+    100126: "ni\xF1o R Finger01"
+    100128: "ni\xF1o R Finger02"
+    100130: "ni\xF1o R Finger0Nub"
+    100132: "ni\xF1o R Finger1"
+    100134: "ni\xF1o R Finger11"
+    100136: "ni\xF1o R Finger12"
+    100138: "ni\xF1o R Finger1Nub"
+    100140: "ni\xF1o R Finger2"
+    100142: "ni\xF1o R Finger21"
+    100144: "ni\xF1o R Finger22"
+    100146: "ni\xF1o R Finger2Nub"
+    100148: "ni\xF1o R Finger3"
+    100150: "ni\xF1o R Finger31"
+    100152: "ni\xF1o R Finger32"
+    100154: "ni\xF1o R Finger3Nub"
+    100156: "ni\xF1o R Finger4"
+    100158: "ni\xF1o R Finger41"
+    100160: "ni\xF1o R Finger42"
+    100162: "ni\xF1o R Finger4Nub"
+    100164: "ni\xF1o R Foot"
+    100166: "ni\xF1o R Forearm"
+    100168: "ni\xF1o R Hand"
+    100170: "ni\xF1o R Thigh"
+    100172: "ni\xF1o R Toe0"
+    100174: "ni\xF1o R Toe0Nub"
+    100176: "ni\xF1o R UpperArm"
+    100178: "ni\xF1o Spine"
+    100180: "ni\xF1o Spine1"
+    100182: OJO 1
+    100184: OJO 2
+    100186: pantalon
+    400000: cabello013
+    400002: cabello015
+    400004: cabello028
+    400006: cabello029
+    400008: cabello030
+    400010: cabello033
+    400012: cabello034
+    400014: cabello035
+    400016: cabello036
+    400018: cabello037
+    400020: cabello038
+    400022: cabello039
+    400024: cabello040
+    400026: cabello041
+    400028: cabello042
+    400030: cabello043
+    400032: cabello044
+    400034: cabello045
+    400036: cabello046
+    400038: cabello047
+    400040: cabello048
+    400042: cabello049
+    400044: chaleco
+    400046: cuerpo
+    400048: //RootNode
+    400050: mandibula
+    400052: "ni\xF1o"
+    400054: "ni\xF1o Head"
+    400056: "ni\xF1o HeadNub"
+    400058: "ni\xF1o L Calf"
+    400060: "ni\xF1o L Clavicle"
+    400062: "ni\xF1o L Finger0"
+    400064: "ni\xF1o L Finger01"
+    400066: "ni\xF1o L Finger02"
+    400068: "ni\xF1o L Finger0Nub"
+    400070: "ni\xF1o L Finger1"
+    400072: "ni\xF1o L Finger11"
+    400074: "ni\xF1o L Finger12"
+    400076: "ni\xF1o L Finger1Nub"
+    400078: "ni\xF1o L Finger2"
+    400080: "ni\xF1o L Finger21"
+    400082: "ni\xF1o L Finger22"
+    400084: "ni\xF1o L Finger2Nub"
+    400086: "ni\xF1o L Finger3"
+    400088: "ni\xF1o L Finger31"
+    400090: "ni\xF1o L Finger32"
+    400092: "ni\xF1o L Finger3Nub"
+    400094: "ni\xF1o L Finger4"
+    400096: "ni\xF1o L Finger41"
+    400098: "ni\xF1o L Finger42"
+    400100: "ni\xF1o L Finger4Nub"
+    400102: "ni\xF1o L Foot"
+    400104: "ni\xF1o L Forearm"
+    400106: "ni\xF1o L Hand"
+    400108: "ni\xF1o L Thigh"
+    400110: "ni\xF1o L Toe0"
+    400112: "ni\xF1o L Toe0Nub"
+    400114: "ni\xF1o L UpperArm"
+    400116: "ni\xF1o Neck"
+    400118: "ni\xF1o Pelvis"
+    400120: "ni\xF1o R Calf"
+    400122: "ni\xF1o R Clavicle"
+    400124: "ni\xF1o R Finger0"
+    400126: "ni\xF1o R Finger01"
+    400128: "ni\xF1o R Finger02"
+    400130: "ni\xF1o R Finger0Nub"
+    400132: "ni\xF1o R Finger1"
+    400134: "ni\xF1o R Finger11"
+    400136: "ni\xF1o R Finger12"
+    400138: "ni\xF1o R Finger1Nub"
+    400140: "ni\xF1o R Finger2"
+    400142: "ni\xF1o R Finger21"
+    400144: "ni\xF1o R Finger22"
+    400146: "ni\xF1o R Finger2Nub"
+    400148: "ni\xF1o R Finger3"
+    400150: "ni\xF1o R Finger31"
+    400152: "ni\xF1o R Finger32"
+    400154: "ni\xF1o R Finger3Nub"
+    400156: "ni\xF1o R Finger4"
+    400158: "ni\xF1o R Finger41"
+    400160: "ni\xF1o R Finger42"
+    400162: "ni\xF1o R Finger4Nub"
+    400164: "ni\xF1o R Foot"
+    400166: "ni\xF1o R Forearm"
+    400168: "ni\xF1o R Hand"
+    400170: "ni\xF1o R Thigh"
+    400172: "ni\xF1o R Toe0"
+    400174: "ni\xF1o R Toe0Nub"
+    400176: "ni\xF1o R UpperArm"
+    400178: "ni\xF1o Spine"
+    400180: "ni\xF1o Spine1"
+    400182: OJO 1
+    400184: OJO 2
+    400186: pantalon
+    2100000: 'Material #88'
+    2100002: 'Material #77'
+    2100004: 'Material #83'
+    2100006: 'Material #86'
+    2100008: 'Material #82'
+    2300000: cabello013
+    2300002: cabello015
+    2300004: cabello028
+    2300006: cabello029
+    2300008: cabello030
+    2300010: cabello033
+    2300012: cabello034
+    2300014: cabello035
+    2300016: cabello036
+    2300018: cabello037
+    2300020: cabello038
+    2300022: cabello039
+    2300024: cabello040
+    2300026: cabello041
+    2300028: cabello042
+    2300030: cabello043
+    2300032: cabello044
+    2300034: cabello045
+    2300036: cabello046
+    2300038: cabello047
+    2300040: cabello048
+    2300042: cabello049
+    2300044: OJO 1
+    2300046: OJO 2
+    3300000: cabello013
+    3300002: cabello015
+    3300004: cabello028
+    3300006: cabello029
+    3300008: cabello030
+    3300010: cabello033
+    3300012: cabello034
+    3300014: cabello035
+    3300016: cabello036
+    3300018: cabello037
+    3300020: cabello038
+    3300022: cabello039
+    3300024: cabello040
+    3300026: cabello041
+    3300028: cabello042
+    3300030: cabello043
+    3300032: cabello044
+    3300034: cabello045
+    3300036: cabello046
+    3300038: cabello047
+    3300040: cabello048
+    3300042: cabello049
+    3300044: OJO 1
+    3300046: OJO 2
+    4300000: cuerpo
+    4300002: OJO 1
+    4300004: OJO 2
+    4300006: cabello013
+    4300008: cabello015
+    4300010: cabello028
+    4300012: cabello029
+    4300014: cabello030
+    4300016: cabello033
+    4300018: cabello034
+    4300020: cabello035
+    4300022: cabello036
+    4300024: cabello037
+    4300026: cabello038
+    4300028: cabello039
+    4300030: cabello040
+    4300032: cabello041
+    4300034: cabello042
+    4300036: cabello043
+    4300038: cabello044
+    4300040: cabello045
+    4300042: cabello046
+    4300044: cabello047
+    4300046: cabello048
+    4300048: cabello049
+    4300050: pantalon
+    4300052: chaleco
+    7400000: search
+    9500000: //RootNode
+    13700000: chaleco
+    13700002: cuerpo
+    13700004: pantalon
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: search
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 102
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

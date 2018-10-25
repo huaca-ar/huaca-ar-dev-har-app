@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: b5be4696c317e814aa7e4ac91bb7c8df
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone001
+    100002: Box006
+    100004: chaleco
+    100006: //RootNode
+    100008: "ni\xF1a"
+    100010: "ni\xF1a Head"
+    100012: "ni\xF1a L Calf"
+    100014: "ni\xF1a L Clavicle"
+    100016: "ni\xF1a L Finger0"
+    100018: "ni\xF1a L Finger01"
+    100020: "ni\xF1a L Finger02"
+    100022: "ni\xF1a L Finger1"
+    100024: "ni\xF1a L Finger11"
+    100026: "ni\xF1a L Finger12"
+    100028: "ni\xF1a L Finger2"
+    100030: "ni\xF1a L Finger21"
+    100032: "ni\xF1a L Finger22"
+    100034: "ni\xF1a L Finger3"
+    100036: "ni\xF1a L Finger31"
+    100038: "ni\xF1a L Finger32"
+    100040: "ni\xF1a L Finger4"
+    100042: "ni\xF1a L Finger41"
+    100044: "ni\xF1a L Finger42"
+    100046: "ni\xF1a L Foot"
+    100048: "ni\xF1a L Forearm"
+    100050: "ni\xF1a L Hand"
+    100052: "ni\xF1a L Thigh"
+    100054: "ni\xF1a L Toe0"
+    100056: "ni\xF1a L UpperArm"
+    100058: "ni\xF1a Neck"
+    100060: "ni\xF1a Pelvis"
+    100062: "ni\xF1a R Calf"
+    100064: "ni\xF1a R Clavicle"
+    100066: "ni\xF1a R Finger0"
+    100068: "ni\xF1a R Finger01"
+    100070: "ni\xF1a R Finger02"
+    100072: "ni\xF1a R Finger1"
+    100074: "ni\xF1a R Finger11"
+    100076: "ni\xF1a R Finger12"
+    100078: "ni\xF1a R Finger2"
+    100080: "ni\xF1a R Finger21"
+    100082: "ni\xF1a R Finger22"
+    100084: "ni\xF1a R Finger3"
+    100086: "ni\xF1a R Finger31"
+    100088: "ni\xF1a R Finger32"
+    100090: "ni\xF1a R Finger4"
+    100092: "ni\xF1a R Finger41"
+    100094: "ni\xF1a R Finger42"
+    100096: "ni\xF1a R Foot"
+    100098: "ni\xF1a R Forearm"
+    100100: "ni\xF1a R Hand"
+    100102: "ni\xF1a R Thigh"
+    100104: "ni\xF1a R Toe0"
+    100106: "ni\xF1a R UpperArm"
+    100108: "ni\xF1a Spine"
+    100110: "ni\xF1a Spine1"
+    100112: OJO 003
+    100114: OJO 2
+    100116: pantalon
+    100118: Plane009
+    100120: Plane010
+    100122: Plane011
+    100124: Plane020
+    100126: Plane021
+    100128: Plane022
+    100130: Plane023
+    100132: Plane024
+    100134: Plane025
+    100136: Plane026
+    100138: Plane027
+    400000: Bone001
+    400002: Box006
+    400004: chaleco
+    400006: //RootNode
+    400008: "ni\xF1a"
+    400010: "ni\xF1a Head"
+    400012: "ni\xF1a L Calf"
+    400014: "ni\xF1a L Clavicle"
+    400016: "ni\xF1a L Finger0"
+    400018: "ni\xF1a L Finger01"
+    400020: "ni\xF1a L Finger02"
+    400022: "ni\xF1a L Finger1"
+    400024: "ni\xF1a L Finger11"
+    400026: "ni\xF1a L Finger12"
+    400028: "ni\xF1a L Finger2"
+    400030: "ni\xF1a L Finger21"
+    400032: "ni\xF1a L Finger22"
+    400034: "ni\xF1a L Finger3"
+    400036: "ni\xF1a L Finger31"
+    400038: "ni\xF1a L Finger32"
+    400040: "ni\xF1a L Finger4"
+    400042: "ni\xF1a L Finger41"
+    400044: "ni\xF1a L Finger42"
+    400046: "ni\xF1a L Foot"
+    400048: "ni\xF1a L Forearm"
+    400050: "ni\xF1a L Hand"
+    400052: "ni\xF1a L Thigh"
+    400054: "ni\xF1a L Toe0"
+    400056: "ni\xF1a L UpperArm"
+    400058: "ni\xF1a Neck"
+    400060: "ni\xF1a Pelvis"
+    400062: "ni\xF1a R Calf"
+    400064: "ni\xF1a R Clavicle"
+    400066: "ni\xF1a R Finger0"
+    400068: "ni\xF1a R Finger01"
+    400070: "ni\xF1a R Finger02"
+    400072: "ni\xF1a R Finger1"
+    400074: "ni\xF1a R Finger11"
+    400076: "ni\xF1a R Finger12"
+    400078: "ni\xF1a R Finger2"
+    400080: "ni\xF1a R Finger21"
+    400082: "ni\xF1a R Finger22"
+    400084: "ni\xF1a R Finger3"
+    400086: "ni\xF1a R Finger31"
+    400088: "ni\xF1a R Finger32"
+    400090: "ni\xF1a R Finger4"
+    400092: "ni\xF1a R Finger41"
+    400094: "ni\xF1a R Finger42"
+    400096: "ni\xF1a R Foot"
+    400098: "ni\xF1a R Forearm"
+    400100: "ni\xF1a R Hand"
+    400102: "ni\xF1a R Thigh"
+    400104: "ni\xF1a R Toe0"
+    400106: "ni\xF1a R UpperArm"
+    400108: "ni\xF1a Spine"
+    400110: "ni\xF1a Spine1"
+    400112: OJO 003
+    400114: OJO 2
+    400116: pantalon
+    400118: Plane009
+    400120: Plane010
+    400122: Plane011
+    400124: Plane020
+    400126: Plane021
+    400128: Plane022
+    400130: Plane023
+    400132: Plane024
+    400134: Plane025
+    400136: Plane026
+    400138: Plane027
+    2100000: 'Material #87'
+    2100002: 'Material #74'
+    2100004: 'Material #85'
+    2100006: 'Material #83'
+    2100008: 'Material #76'
+    2300000: OJO 003
+    2300002: OJO 2
+    2300004: Plane009
+    2300006: Plane010
+    2300008: Plane011
+    2300010: Plane020
+    2300012: Plane021
+    2300014: Plane022
+    2300016: Plane023
+    2300018: Plane024
+    2300020: Plane025
+    2300022: Plane026
+    2300024: Plane027
+    3300000: OJO 003
+    3300002: OJO 2
+    3300004: Plane009
+    3300006: Plane010
+    3300008: Plane011
+    3300010: Plane020
+    3300012: Plane021
+    3300014: Plane022
+    3300016: Plane023
+    3300018: Plane024
+    3300020: Plane025
+    3300022: Plane026
+    3300024: Plane027
+    4300000: Box006
+    4300002: chaleco
+    4300004: OJO 003
+    4300006: OJO 2
+    4300008: Plane009
+    4300010: Plane010
+    4300012: Plane011
+    4300014: Plane020
+    4300016: Plane021
+    4300018: Plane022
+    4300020: Plane023
+    4300022: Plane025
+    4300024: Plane026
+    4300026: Plane027
+    4300028: Plane024
+    4300030: pantalon
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Box006
+    13700002: chaleco
+    13700004: pantalon
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
