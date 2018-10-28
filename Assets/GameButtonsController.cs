@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameButtonsController : MonoBehaviour {
 
+	public GameObject StaminaBar;
+	public GameObject ARCanvas;
 	public GameObject extractionCanvas;
 	public GameObject extractionZone;
 	public GameObject findCanvas;
@@ -29,8 +31,10 @@ public class GameButtonsController : MonoBehaviour {
 
 	public void normalExtToARExt() {
 		mainCamera.SetActive(false);
+		StaminaBar.transform.SetParent(ARCanvas.transform, false);
 		extractionCanvas.SetActive(false);
 		arCamera.SetActive(true);
+		ARCanvas.SetActive(true);
 	}
 
 	public void ARExtToNormalExt() {
