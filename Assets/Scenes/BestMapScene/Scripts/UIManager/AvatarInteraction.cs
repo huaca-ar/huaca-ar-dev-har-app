@@ -40,9 +40,9 @@ public class AvatarInteraction : MonoBehaviour {
 
 
 			Debug.Log("Se inicia escaneo de area .........");
-			// this.prepareGPSLocation();
-			this.myLatitude = 37.784179;
-			this.myLongitude = -122.401583; 
+			this.prepareGPSLocation();
+			// this.myLatitude = 37.784179;
+			// this.myLongitude = -122.401583; 
 			touchCount++;
 			coordinates.text = "Lat: " + this.myLatitude + ", Long: " + this.myLongitude + ", Touch: " + touchCount;
 			List<string> locationsToSpawn = new List<string>();
