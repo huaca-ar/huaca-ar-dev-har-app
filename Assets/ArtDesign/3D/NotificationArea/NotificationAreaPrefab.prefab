@@ -1033,3 +1033,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: {fileID: 1854216391480674}
+  mapSceneManagerGO: {fileID: 0}

@@ -10,6 +10,8 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField]
 	private GameObject menu;
 
+	public Animator transitionAnim;
+
 	public void toogleMenu(){
 		menu.SetActive(!menu.activeSelf);
 	}
@@ -19,4 +21,15 @@ public class MapSceneManager : MonoBehaviour {
 
 		SceneManager.LoadScene(GameConstants.PROFILE_SCENE,LoadSceneMode.Single);
 	}
+
+	public void transitionEffect(string SceneName) {
+		StartCoroutine(this.LoadScene(SceneName));
+	}
+
+	IEnumerator LoadScene(string SceneName) {
+		transitionAnim.SetTrigger("end");
+		yield return new WaitForSeconds(1.5f);
+		SceneManager.LoadScene(SceneName);
+	}
+
 }
