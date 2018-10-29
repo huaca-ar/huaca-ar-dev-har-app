@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameButtonsController : MonoBehaviour {
 
 	public GameObject StaminaBar;
+	public GameObject arButton;
 	public GameObject ARCanvas;
 	public GameObject extractionCanvas;
 	public GameObject extractionZone;
@@ -24,7 +25,10 @@ public class GameButtonsController : MonoBehaviour {
 
 	public void ARButton() {
 		Debug.Log("Se acaba de pulsar el boton de AR");
-		this.normalExtToARExt();
+		if (!this.isARActivated())
+			this.normalExtToARExt();
+		else
+			this.ARExtToNormalExt();
 	}
 
 
@@ -32,6 +36,7 @@ public class GameButtonsController : MonoBehaviour {
 	public void normalExtToARExt() {
 		mainCamera.SetActive(false);
 		StaminaBar.transform.SetParent(ARCanvas.transform, false);
+		arButton.transform.SetParent(ARCanvas.transform, false);
 		extractionCanvas.SetActive(false);
 		arCamera.SetActive(true);
 		ARCanvas.SetActive(true);
@@ -39,6 +44,8 @@ public class GameButtonsController : MonoBehaviour {
 
 	public void ARExtToNormalExt() {
 		arCamera.SetActive(false);
+		StaminaBar.transform.SetParent(extractionCanvas.transform, false);
+		arButton.transform.SetParent(extractionCanvas.transform, false);
 		extractionCanvas.SetActive(true);
 		mainCamera.SetActive(true);
 	}

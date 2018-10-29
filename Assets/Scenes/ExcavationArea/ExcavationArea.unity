@@ -2119,6 +2119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StaminaBar: {fileID: 608077276}
+  arButton: {fileID: 316027132}
   ARCanvas: {fileID: 1778112269}
   extractionCanvas: {fileID: 790272409}
   extractionZone: {fileID: 1516852376}
