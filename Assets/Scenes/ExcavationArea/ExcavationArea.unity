@@ -2308,3 +2308,5 @@ MonoBehaviour:
   findCanvas: {fileID: 110703531}
   arCamera: {fileID: 284026071}
   mainCamera: {fileID: 1490560198}
+  transitionCanvas: {fileID: 433640754}
+  transitionAnim: {fileID: 1869681823}

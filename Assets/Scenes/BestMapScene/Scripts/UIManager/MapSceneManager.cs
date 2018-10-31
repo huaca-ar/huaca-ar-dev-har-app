@@ -11,6 +11,12 @@ public class MapSceneManager : MonoBehaviour {
 	private GameObject menu;
 
 	public Animator transitionAnim;
+	public GameObject transitionCanvas;
+
+	void Update() {
+		if (transitionAnim.GetBool("finishIntro"))
+			transitionCanvas.SetActive(false);
+	}
 
 	public void toogleMenu(){
 		menu.SetActive(!menu.activeSelf);

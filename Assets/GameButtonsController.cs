@@ -12,6 +12,8 @@ public class GameButtonsController : MonoBehaviour {
 	public GameObject findCanvas;
 	public GameObject arCamera;
 	public GameObject mainCamera;
+	public GameObject transitionCanvas;
+	public Animator transitionAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +21,9 @@ public class GameButtonsController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update() {
+		if (transitionAnim.GetBool("finishIntro"))
+			transitionCanvas.SetActive(false);
 	}
 
 	public void ARButton() {
