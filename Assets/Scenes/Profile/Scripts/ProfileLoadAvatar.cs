@@ -7,6 +7,7 @@ using UnityEngine;
 public class ProfileLoadAvatar : MonoBehaviour {
 	private GameObject avatar;
 	private GameObject avatarEmpty;
+	static private float DISTANCE_TO_AVATAR = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +35,15 @@ public class ProfileLoadAvatar : MonoBehaviour {
 		avatarEmpty.transform.position = avatarRenderer.bounds.center;
 		avatar.transform.SetParent(avatarEmpty.transform);
 		avatarEmpty.transform.position = centroid;
+
+		Debug.Log("pos: " + avatar.transform.position);
+		Debug.Log("scale: " + avatar.transform.localScale);
+
+		float avatarMaxDimension = Math.Max(avatarRenderer.bounds.size.x,
+			Math.Max(avatarRenderer.bounds.size.y, avatarRenderer.bounds.size.z));
+
+		avatarEmpty.transform.position +=
+			new Vector3(0, 0, -avatarMaxDimension / 2 - DISTANCE_TO_AVATAR);
 	}
 	
 	// Update is called once per frame
