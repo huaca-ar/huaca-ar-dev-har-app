@@ -15,17 +15,17 @@ namespace Mapbox.Examples
 		AstronautMouseController _controller;
 		void Start()
 		{
-			_controller = GetComponent<AstronautMouseController>();
+			// _controller = GetComponent<AstronautMouseController>();
 		}
 
 		void Update()
 		{
            
 			
-			if (_controller.enabled)// Because the mouse control script interferes with this script
-			{
-				return;
-			}
+			// if (_controller.enabled)// Because the mouse control script interferes with this script
+			// {
+			// 	return;
+			// }
 
              if(Target.position == this.transform.position)
             {

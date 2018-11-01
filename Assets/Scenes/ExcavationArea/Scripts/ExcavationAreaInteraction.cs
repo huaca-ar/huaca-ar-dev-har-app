@@ -12,6 +12,8 @@ public class ExcavationAreaInteraction : MonoBehaviour {
 	private int touchCount;
 	private GameButtonsController buttonsController;
 	// Use this for initialization
+
+	private int exp = 500;
 	void Start () {
 		touchCount = 0;
 		buttonsController = GameController.GetComponent<GameButtonsController>();
@@ -34,6 +36,8 @@ public class ExcavationAreaInteraction : MonoBehaviour {
 			buttonsController.goTofoundArtifact();
 			DatabaseReference personalInfo = FirebaseDatabase.DefaultInstance.RootReference.Child("Users").Child(PlayerPrefs.GetString("userid")).Child("PersonalInfo");
 
+			exp = PlayerPrefs.GetInt("exp") + 500;
+			PlayerPrefs.SetInt("exp",exp);
 			personalInfo.Child("exp").SetValueAsync(exp);
 		}
 	}

@@ -4497,7 +4497,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1440, y: 2960}
-  m_ScreenMatchMode: 2
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5314,7 +5314,7 @@ MonoBehaviour:
   nickReg: {fileID: 57800795}
   passReg: {fileID: 132543965}
   statusLogin: {fileID: 10911757}
-  dbManager: {fileID: 0}
+  dbManager: {fileID: 1062877455}
 --- !u!4 &1740438279
 Transform:
   m_ObjectHideFlags: 0
@@ -6069,7 +6069,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100048, guid: 2e0c42c1498c9af4bbf31ff97e46d44d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e0c42c1498c9af4bbf31ff97e46d44d, type: 3}
