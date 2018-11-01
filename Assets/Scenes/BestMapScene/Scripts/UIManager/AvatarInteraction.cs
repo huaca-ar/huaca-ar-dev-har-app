@@ -14,10 +14,11 @@ public class AvatarInteraction : MonoBehaviour {
 	public Text coordinates;
 	public double myLatitude;
 	public double myLongitude;
-	
-	
+	private Animator animator;
+	private bool justFinishScan;
 	void Awake() {
 		spawnOnMap = map.GetComponent<SpawnOnMap>();
+		animator = gameObject.GetComponent<Animator>();
 	}
 
 	void Start () {
@@ -26,7 +27,11 @@ public class AvatarInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+			if (animator.GetBool("isScanning") == false && justFinishScan == true) {
+				particleSystem.SetActive(false);
+				spawnOnMap.enabled = true;
+				justFinishScan = false;
+			}
 	}
 
 	private void OnMouseDown() {
@@ -34,10 +39,8 @@ public class AvatarInteraction : MonoBehaviour {
 		if (spawnOnMap.enabled == false) {
 			
 
-			Animator animator = gameObject.GetComponent<Animator>();
-
 			animator.SetBool("isScanning",true);
-
+			justFinishScan = true;
 
 			Debug.Log("Se inicia escaneo de area .........");
 			this.prepareGPSLocation();
@@ -76,7 +79,7 @@ public class AvatarInteraction : MonoBehaviour {
 			// una vez que se de un tap sobre el avatar entonces mostrara los profabs sobre el mapa
 			spawnOnMap.setLocationPoints(locationsToSpawn.ToArray());
 		}
-		spawnOnMap.enabled = !spawnOnMap.enabled;
+		//spawnOnMap.enabled = !spawnOnMap.enabled;
 	}
 
 	public void prepareGPSLocation() {
