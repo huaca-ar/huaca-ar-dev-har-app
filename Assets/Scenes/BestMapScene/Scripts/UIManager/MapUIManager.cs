@@ -15,6 +15,9 @@ public class MapUIManager : MonoBehaviour {
 	private string uuid;
 	private int gender;
 
+	public Animator transitionAnim;
+	public GameObject transitionCanvas;
+
 
 	public delegate void MyFunction();
 	protected MyFunction callback;
@@ -97,6 +100,11 @@ public class MapUIManager : MonoBehaviour {
 	// 	});
 	// }
 
+	void Update() {
+		if (transitionAnim.GetBool("finishIntro"))
+			transitionCanvas.SetActive(false);
+	}
+
 	private  void setActiveAvatar(int gender){
 		Debug.Log("llamada a setActiveAvatar");
 		if(gender==1){
@@ -109,6 +117,17 @@ public class MapUIManager : MonoBehaviour {
 	public void toogleMenu(){
 		menu.SetActive(!menu.activeSelf);
 	}
+
+	public void transitionEffect(string SceneName) {
+		StartCoroutine(this.LoadScene(SceneName));
+	}
+
+	IEnumerator LoadScene(string SceneName) {
+		transitionAnim.SetTrigger("end");
+		yield return new WaitForSeconds(1.5f);
+		SceneManager.LoadScene(SceneName);
+	}
+
 
 	
 }
