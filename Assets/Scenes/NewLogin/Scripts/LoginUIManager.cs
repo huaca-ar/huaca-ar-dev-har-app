@@ -36,62 +36,125 @@ public class LoginUIManager : MonoBehaviour {
 	
 	[SerializeField] private GameObject passWarningReg;
 
-
-
-
 	private bool isMale = true;
     private bool isValidData;
 
-    public bool IsValidData
-    {
-        get
-        {
-            return isValidData;
-        }
-
-        set
-        {
-            isValidData = value;
-        }
-    }
-
-    public bool IsMale
-    {
-        get
-        {
-            return isMale;
-        }
-
-        set
-        {
-            isMale = value;
-        }
-    }
+    private DBServiceManager dbmanager;
+	private GameSceneManager sceneManager;
 
 
 	void Start(){
-
-		//probar con el login
-		// InputField nickLogin = nickname.GetComponent<InputField>();
-		// nickLogin.onEndEdit.AddListener(delegate{
-		// 	ValidateNickname(nickLogin.text);
-		// 	});
-
-		// InputField passLogin = password.GetComponent<InputField>();
-		// passLogin.onEndEdit.AddListener(delegate{
-		// 	ValidatePassword(passLogin.text);
-		// });
 
 		AddListenerPass(password, passWarning);
 		AddListenerNick(nickname, nickWarning) ;
 		AddListenerNick(passReg, nickWarningReg);
 		AddListenerPass(passReg, passWarningReg);
-
+		dbmanager = GetComponentInChildren<DBServiceManager>();
+		sceneManager = GetComponent<GameSceneManager>();
 		//Eliminar todas las claves cuando inicia el juego
 		// PlayerPrefs.DeleteAll();
 		
 	}
 
+	
+    public void NewUserButtonPressed(){
+		chooseAvatarCanvas.SetActive(true);
+		firstCanvas.SetActive(false);
+		 
+	}
+
+    public void ExistingUserButtonPressed(){
+
+		// ocultar los botones actuales
+
+		RemoveFirstView();
+
+		// activar botones de la vista iniciar sesion
+
+		nickname.SetActive(true);
+		password.SetActive(true);
+		startgame.SetActive( true);
+		loginTitle.SetActive(true);
+		
+	}
+
+	public void RemoveFirstView(){
+		existingUser.SetActive(false);
+		newUser.SetActive(false);
+
+		Vector3 position = logo.transform.position;
+		logo.SetNativeSize();
+		logo.rectTransform.position = position + new Vector3(0,180,0);
+
+	}
+
+	
+
+	public void NextButtonPressed(){
+		chooseAvatarCanvas.SetActive(false);
+		registerAccountCanvas.SetActive(true);
+		if(IsMale){
+			maleAvatarReg.SetActive(true);
+		}else{
+			femaleAvatarReg.SetActive(true);
+		}
+		// 1 hombre
+		// 0 mujer
+		PlayerPrefs.SetInt(GameConstants.GENDER_TAG, IsMale ? 1 : 0);
+	
+	}
+	public void StartGameButtonPressed(){
+
+		// Debug.LogFormat("val nick: {0}  pass: {1}");
+
+		Debug.LogFormat("Es data valida {0}",isValidData.ToString());
+
+		if(IsValidData){			
+			//Metodo para Loguear usuario
+			passWarning.SetActive(false);
+			nickWarning.SetActive(false);
+
+			
+			// DBServiceManager service = GetComponentInChildren<DBServiceManager>();
+			dbmanager.LoginUser(); // controlar login correcto
+
+			sceneManager.LoadMapScene();
+			
+		}
+		
+	}
+
+
+
+	public void RegisterButtonPressed(){
+		Debug.LogFormat("En el registro es data valida {0}",isValidData.ToString());
+
+		if(IsValidData){			
+			// metodo para registrar usuario
+			dbmanager.CreateUser();
+
+			passWarningReg.SetActive(false);
+			nickWarningReg.SetActive(false);
+			
+			sceneManager.LoadMapScene();
+			
+		}
+
+	}
+	public void MaleButtonPressed(){
+		maleAvatar.SetActive(true);
+		femaleAvatar.SetActive(false);
+		IsMale = true;
+		Debug.LogFormat("Escoge hombre : {0}", IsMale.ToString() );
+	}
+	public void FemaleButtonPressed(){
+		maleAvatar.SetActive(false);
+		femaleAvatar.SetActive(true);
+		IsMale = false;
+
+		Debug.LogFormat("Escoge mujer : {0}", (!IsMale).ToString() );
+	}
+	
 	void AddListenerPass(GameObject gameObject, GameObject warn){
 		InputField myfield = gameObject.GetComponent<InputField>();
 		myfield.onEndEdit.AddListener(delegate{
@@ -106,38 +169,6 @@ public class LoginUIManager : MonoBehaviour {
 			ValidateNickname(myfield.text, warn);
 		});
 
-	}
-    public void NewUserButtonPressed(){
-		chooseAvatarCanvas.SetActive(true);
-		firstCanvas.SetActive(false);
-		 
-	}
-
-	public void RemoveFirstView(){
-		existingUser.SetActive(false);
-		newUser.SetActive(false);
-
-		Vector3 position = logo.transform.position;
-		logo.SetNativeSize();
-		logo.rectTransform.position = position + new Vector3(0,180,0);
-		
-
-		
-	
-	}
-    public void ExistingUserButtonPressed(){
-
-		// ocultar los botones actuales
-
-		RemoveFirstView();
-
-		// activar botones de la vista iniciar sesion
-
-		nickname.SetActive(true);
-		password.SetActive(true);
-		startgame.SetActive( true);
-		loginTitle.SetActive(true);
-		
 	}
 
 
@@ -181,61 +212,30 @@ public class LoginUIManager : MonoBehaviour {
 
 	}
 
-	public void StartGameButtonPressed(){
+	public bool IsValidData
+    {
+        get
+        {
+            return isValidData;
+        }
 
-		// Debug.LogFormat("val nick: {0}  pass: {1}");
+        set
+        {
+            isValidData = value;
+        }
+    }
 
-		Debug.LogFormat("Es data valida {0}",isValidData.ToString());
+    public bool IsMale
+    {
+        get
+        {
+            return isMale;
+        }
 
-		if(IsValidData){			
-			//Metodo para Loguear usuario
-			passWarning.SetActive(false);
-			nickWarning.SetActive(false);
-			
-		}
-		
-	}
-
-
-	public void NextButtonPressed(){
-		chooseAvatarCanvas.SetActive(false);
-		registerAccountCanvas.SetActive(true);
-		if(IsMale){
-			maleAvatarReg.SetActive(true);
-		}else{
-			femaleAvatarReg.SetActive(true);
-		}
-		// 1 hombre
-		// 0 mujer
-		PlayerPrefs.SetInt("gender",IsMale ? 1 : 0);
-	
-	}
-
-	public void RegisterButtonPressed(){
-		Debug.LogFormat("En el registro es data valida {0}",isValidData.ToString());
-
-		if(IsValidData){			
-			// metodo para registrar usuario
-			passWarningReg.SetActive(false);
-			nickWarningReg.SetActive(false);
-			
-		}
-
-	}
-	public void MaleButtonPressed(){
-		maleAvatar.SetActive(true);
-		femaleAvatar.SetActive(false);
-		IsMale = true;
-		Debug.LogFormat("Escoge hombre : {0}", IsMale.ToString() );
-	}
-	public void FemaleButtonPressed(){
-		maleAvatar.SetActive(false);
-		femaleAvatar.SetActive(true);
-		IsMale = false;
-
-		Debug.LogFormat("Escoge mujer : {0}", (!IsMale).ToString() );
-	}
-	
-
+        set
+        {
+            isMale = value;
+        }
+    }
 
 }

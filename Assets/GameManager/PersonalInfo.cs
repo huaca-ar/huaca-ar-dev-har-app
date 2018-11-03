@@ -153,7 +153,9 @@ public class PersonalInfo  {
 		Exp = 0;
 		Level = 1;
 		IsTutorialDone = false;
-        Gender = PlayerPrefs.GetInt("gender");
+        Gender = PlayerPrefs.GetInt(GameConstants.GENDER_TAG);
+        Nickname = PlayerPrefs.GetString(GameConstants.NAME_TAG);
+        
 		
     }
 
