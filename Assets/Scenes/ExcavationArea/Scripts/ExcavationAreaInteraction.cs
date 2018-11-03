@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Firebase.Database;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,9 +43,9 @@ public class ExcavationAreaInteraction : MonoBehaviour {
 
 			PlayerPrefs.SetInt("exp",exp);
 
-			DatabaseReference personalInfo = FirebaseDatabase.DefaultInstance.RootReference.Child("Users").Child(PlayerPrefs.GetString("userid")).Child("PersonalInfo");
+			
 
-			personalInfo.Child("exp").SetValueAsync(exp);
+			
 		}
 	}
 }

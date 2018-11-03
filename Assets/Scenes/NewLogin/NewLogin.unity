@@ -755,7 +755,7 @@ MonoBehaviour:
   nickWarning: {fileID: 1445180075}
   passWarning: {fileID: 1027205208}
   logo: {fileID: 727888542}
-  authManager: {fileID: 1740438278}
+  authManager: {fileID: 0}
   startgame: {fileID: 1017050205}
   loginTitle: {fileID: 127650897}
   chooseAvatarCanvas: {fileID: 648083811}
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1062877456}
+      - m_Target: {fileID: 0}
         m_MethodName: TestSave
         m_Mode: 1
         m_Arguments:
@@ -2288,7 +2288,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1740438278}
+      - m_Target: {fileID: 0}
         m_MethodName: RegisterUser
         m_Mode: 1
         m_Arguments:
@@ -4092,7 +4092,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1062877457}
-  - component: {fileID: 1062877456}
   m_Layer: 0
   m_Name: DBManager
   m_TagString: Untagged
@@ -4100,18 +4099,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1062877456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1062877455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fe2713bbd411df4ba68f044af6079e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  status: {fileID: 10911757}
 --- !u!4 &1062877457
 Transform:
   m_ObjectHideFlags: 0
@@ -5290,7 +5277,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1740438279}
-  - component: {fileID: 1740438278}
   m_Layer: 0
   m_Name: AuthManager
   m_TagString: Untagged
@@ -5298,23 +5284,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1740438278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1740438277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fd1bebb213e5374890df5717de14bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nickLogin: {fileID: 40336809}
-  passLogin: {fileID: 456852427}
-  nickReg: {fileID: 57800795}
-  passReg: {fileID: 132543965}
-  statusLogin: {fileID: 10911757}
-  dbManager: {fileID: 0}
 --- !u!4 &1740438279
 Transform:
   m_ObjectHideFlags: 0
