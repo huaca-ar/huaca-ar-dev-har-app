@@ -8,23 +8,23 @@ public class ProfileScreenManager : MonoBehaviour {
 
 	// Use this for initialization
 	[SerializeField] private Text exp;
+	[SerializeField] private Text nickname;
 	[SerializeField] private GameObject maleAvatar;
 	[SerializeField] private GameObject femaleAvatar;
 
+
 	void Start(){
-		exp.text = PlayerPrefs.GetInt("exp").ToString();
+		exp.text = PlayerPrefs.GetInt(GameConstants.EXP_TAG).ToString();
+		nickname.text = PlayerPrefs.GetString(GameConstants.NAME_TAG);
 
-
-		if(PlayerPrefs.GetInt("gender")==1){
+		if(PlayerPrefs.GetInt(GameConstants.GENDER_TAG)==1){
 			maleAvatar.SetActive(true);
 		}else{
 			femaleAvatar.SetActive(true);
 		}
 	}
 
-	public void LoadMapScene(){
-		SceneManager.LoadScene(GameConstants.MAP_SCENE,LoadSceneMode.Single);
-	}
+	
 
 
 }

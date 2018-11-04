@@ -27,4 +27,9 @@ public static class GameConstants {
 	public static int SECOND_SEARCH_AWARD = 25;
 	public static int THRID_SEARCH_AWARD = 50;
 
+	public static string EXP_TAG= "exp";
+	public static string GENDER_TAG = "gender";
+	public static string NAME_TAG = "name";
+	public static string LEVEL_TAG = "level";
+
 }
