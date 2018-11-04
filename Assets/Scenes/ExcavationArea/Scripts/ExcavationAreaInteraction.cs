@@ -34,11 +34,11 @@ public class ExcavationAreaInteraction : MonoBehaviour {
 		if (touchCount >= ExcavationAreas.REQUIRED_QUANTITY) {
 			Debug.Log("Se realiza la transicion hacia la ventana de Find Canvas");
 			buttonsController.goTofoundArtifact();
-			DatabaseReference personalInfo = FirebaseDatabase.DefaultInstance.RootReference.Child("Users").Child(PlayerPrefs.GetString("userid")).Child("PersonalInfo");
+			// DatabaseReference personalInfo = FirebaseDatabase.DefaultInstance.RootReference.Child("Users").Child(PlayerPrefs.GetString("userid")).Child("PersonalInfo");
 
 			exp = PlayerPrefs.GetInt("exp") + 500;
 			PlayerPrefs.SetInt("exp",exp);
-			personalInfo.Child("exp").SetValueAsync(exp);
+			// personalInfo.Child("exp").SetValueAsync(exp);
 		}
 	}
 	

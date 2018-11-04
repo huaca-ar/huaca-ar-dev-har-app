@@ -17,7 +17,7 @@ public class LoginUIManager : MonoBehaviour {
 	[SerializeField] private GameObject passWarning;
 	[SerializeField] private Image logo;
 	
-	[SerializeField] private AuthManager authManager;
+	// [SerializeField] private AuthManager authManager;
 	[SerializeField] private GameObject startgame;
 	[SerializeField] private GameObject loginTitle;
 	[SerializeField] private GameObject chooseAvatarCanvas;
@@ -190,7 +190,8 @@ public class LoginUIManager : MonoBehaviour {
 		Debug.LogFormat("Es data valida {0}",isValidData.ToString());
 
 		if(IsValidData){			
-			authManager.LoginUser();
+			// authManager.LoginUser();
+			GetComponent<GameSceneManager>().LoadMapScene();
 			passWarning.SetActive(false);
 			nickWarning.SetActive(false);
 			
@@ -217,9 +218,10 @@ public class LoginUIManager : MonoBehaviour {
 		Debug.LogFormat("En el registro es data valida {0}",isValidData.ToString());
 
 		if(IsValidData){			
-			authManager.RegisterUser();
+			// authManager.RegisterUser();
 			passWarningReg.SetActive(false);
 			nickWarningReg.SetActive(false);
+			GetComponent<GameSceneManager>().LoadMapScene();
 			
 		}
 
