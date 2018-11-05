@@ -35,14 +35,9 @@ public class Zoom : MonoBehaviour {
 		}else{
 			selectedAvatar = maleAvatar;
 		}
-
-
-
 	}
 
-
-
-	void Update(){
+	void LateUpdate(){
 		if(Input.touchCount == 2){
 			Touch touchZero = Input.GetTouch(0);
 			Touch touchOne = Input.GetTouch(1);
@@ -69,6 +64,10 @@ public class Zoom : MonoBehaviour {
 		}
 	}
 
+	void Update(){
+		gpsLocation();
+	}
+
 	void ZoomMapUsingTouchOrMouse(float zoomFactor)
 		{
 			var zoom = Mathf.Max(0.0f, Mathf.Min(_mapManager.Zoom + zoomFactor * _zoomSpeed, 21.0f));
@@ -82,7 +81,7 @@ public class Zoom : MonoBehaviour {
 					// Vector2d position = new Vector2d(GetComponent<AvatarInteraction>().myLatitude,GetComponent<AvatarInteraction>().myLongitude);
 					// Vector2d position = new Vector2d(1);
 					// _mapManager.UpdateMap( position , zoom);
-					gpsLocation();
+		
 					// _mapManager.SetCenterLatitudeLongitude(position);
 					_mapManager.UpdateMap( _mapManager.CenterLatitudeLongitude , zoom);
 					// choosedAvatar.transform.localPosition = _mapManager.GeoToWorldPosition(position);

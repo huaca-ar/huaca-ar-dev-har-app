@@ -6386,7 +6386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _desiredAccuracyInMeters: 10
   _updateDistanceInMeters: 1
-  _updateTimeInMilliSeconds: 900
+  _updateTimeInMilliSeconds: 2000
   _userHeadingSmoothing: {fileID: 0}
   _deviceOrientationSmoothing: {fileID: 0}
   _editorDebuggingOnly:

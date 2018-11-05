@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Mapbox.Examples;
 using UnityEngine;
 
 public class AvatarMovement : MonoBehaviour {
@@ -9,7 +10,7 @@ public class AvatarMovement : MonoBehaviour {
 	public Transform target;
 
 	public Animator avatarAnimator;
-	public float speed = 1;
+	public float speed = 0.5f;
 
 	
 
@@ -23,37 +24,30 @@ public class AvatarMovement : MonoBehaviour {
 	void Update () {
 		if(target.position == this.transform.position){
 			avatarAnimator.SetBool("IsWalking",false);
-			Debug.Log("Avatar en idle");
-		
+			Debug.Log("Avatar en idle");			
 		}
 
 	}
 
 	void LateUpdate(){
-		if(target.position != this.transform.position){
+		
 			var distance = Vector3.Distance(transform.position, target.position);
 			
 			if(distance > 1.0f){
 				// el avatar mira hacia la posicion del target
 
 				Debug.Log("distancia entre target y avatar mayor a 0.1");
-				
+				GetComponent<RotateWithLocationProvider>().enabled = false;
 				avatarAnimator.SetBool("IsWalking",true);
 				transform.LookAt(target.position);
 				transform.Translate(Vector3.forward*speed);
 
 				// cam.transform.LookAt(transform.position);				
-			
 			}else{
 				avatarAnimator.SetBool("IsWalking",false);
+				GetComponent<RotateWithLocationProvider>().enabled = true;
+
 			}
-
-		}else{
-				avatarAnimator.SetBool("IsWalking",false);
-		}
-
-
-
 	}
 
 	
