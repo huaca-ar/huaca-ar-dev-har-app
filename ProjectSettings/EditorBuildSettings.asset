@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/3rdParty/Mapbox/Examples/2_AstronautGame/AstronautGame.unity
     guid: 23b3522d4f6fa450eb781397db4b26ed
   - enabled: 0
-    path: Assets/Scenes/Login/LoginScene.unity
-    guid: da3e1f47e7636ca43a4f900d6bf4729a
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/NewLogin/NewLogin.unity
     guid: 7ccb5be0f9b58a444a5c2725f1a0c6ad
   - enabled: 1
@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Profile/Profile.unity
     guid: 98bcbc17cedd888408ed4b98e8515ba2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ExcavationArea/ExcavationArea.unity
     guid: 7dcf87bd8df0c7a4782f6211e354936b
   m_configObjects: {}

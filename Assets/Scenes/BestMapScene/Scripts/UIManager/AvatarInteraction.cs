@@ -79,7 +79,7 @@ public class AvatarInteraction : MonoBehaviour {
 			// una vez que se de un tap sobre el avatar entonces mostrara los profabs sobre el mapa
 			spawnOnMap.setLocationPoints(locationsToSpawn.ToArray());
 		}
-		//spawnOnMap.enabled = !spawnOnMap.enabled;
+		spawnOnMap.enabled = !spawnOnMap.enabled;
 	}
 
 	public void prepareGPSLocation() {

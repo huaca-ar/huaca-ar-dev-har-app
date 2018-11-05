@@ -11,8 +11,7 @@ public class MapUIManager : MonoBehaviour {
 	[SerializeField] private GameObject menu;
 	[SerializeField] private GameObject femaleAvatar;
 	[SerializeField] private GameObject maleAvatar;
-	private string uuid;
-	private int gender;
+	public GameObject circleAnimation;
 
 	public Animator transitionAnim;
 	public GameObject transitionCanvas;
@@ -24,7 +23,10 @@ public class MapUIManager : MonoBehaviour {
 	void Start(){
 		
 
-		setActiveAvatar(PlayerPrefs.GetInt("gender"));
+		setActiveAvatar(PlayerPrefs.GetInt(GameConstants.GENDER_TAG));
+
+		
+
 
 	}
 
@@ -33,6 +35,12 @@ public class MapUIManager : MonoBehaviour {
 	void Update() {
 		if (transitionAnim.GetBool("finishIntro"))
 			transitionCanvas.SetActive(false);
+
+		if(maleAvatar.activeSelf){
+			circleAnimation.transform.position = maleAvatar.transform.position + new Vector3(0,2,0);
+		}else{
+			circleAnimation.transform.position = femaleAvatar.transform.position + new Vector3(0,2,0);
+		}	
 	}
 
 	private  void setActiveAvatar(int gender){
